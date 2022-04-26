@@ -37,7 +37,7 @@
 ### Création d'une *branch* :     
 • `git checkout develop`     
 • `git fetch -a`     
-• `git checkout -b raito-numéroduticket origin/develop`     
+• `git checkout -b raito-numéroduticket`     
 • `git push`  -> Votre terminal va vous donner la commande à copier/coller qui ressemblera à la seconde option        
     OU          
 • `git push --set-upstream origin [nom de la branch]`        
