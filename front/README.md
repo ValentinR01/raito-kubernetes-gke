@@ -2,11 +2,11 @@
           
 ## Developpeurs :      
          
-• [Doriane Farau] (https://github.com/DFarau)         
-• [Naiara Trivino] (https://github.com/nt-95)       
-• [Paola Cyprien] (https://github.com/Pao-La-CCC)       
-• [Tania Mahouche] (https://github.com/TaniaMAHOUCHE)        
-• [Valentin Mariot] (https://github.com/valentinmariot)         
+• [Doriane Farau](https://github.com/DFarau)         
+• [Naiara Trivino](https://github.com/nt-95)       
+• [Paola Cyprien](https://github.com/Pao-La-CCC)       
+• [Tania Mahouche](https://github.com/TaniaMAHOUCHE)        
+• [Valentin Mariot](https://github.com/valentinmariot)         
         
 ## Installation :     
 `npm i`    

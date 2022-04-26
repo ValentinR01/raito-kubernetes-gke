@@ -4,18 +4,18 @@
 ## Developpeurs :         
           
 ### BACK :       
-• [Chloé Doustalet] (https://github.com/chloe-dst)         
-• [Mélissande Dizy] (https://github.com/lestox)       
-• [Nassim Yazi] (https://github.com/Nassim-dev)       
-• [Nicolas Foessel] (https://github.com/NicolasFOESSEL)        
-• [Valentin Rajeunier] (https://github.com/ValentinR01)           
+• [Chloé Doustalet](https://github.com/chloe-dst)         
+• [Mélissande Dizy](https://github.com/lestox)       
+• [Nassim Yazi](https://github.com/Nassim-dev)       
+• [Nicolas Foessel](https://github.com/NicolasFOESSEL)        
+• [Valentin Rajeunier](https://github.com/ValentinR01)           
 
 ### FRONT :       
-• [Doriane Farau] (https://github.com/DFarau)         
-• [Naiara Trivino] (https://github.com/nt-95)       
-• [Paola Cyprien] (https://github.com/Pao-La-CCC)       
-• [Tania Mahouche] (https://github.com/TaniaMAHOUCHE)        
-• [Valentin Mariot] (https://github.com/valentinmariot)         
+• [Doriane Farau](https://github.com/DFarau)         
+• [Naiara Trivino](https://github.com/nt-95)       
+• [Paola Cyprien](https://github.com/Pao-La-CCC)       
+• [Tania Mahouche](https://github.com/TaniaMAHOUCHE)        
+• [Valentin Mariot](https://github.com/valentinmariot)         
       
 ## Workflow :       
               
