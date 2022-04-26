@@ -4,7 +4,7 @@ import Text from './components/atoms/grouping/Text/Text'
 function App() {
   return (
     <div className="App">
-       <Text className='coucou'></Text>
+       <Text>RAITŌ</Text>
     </div>
   );
 }
