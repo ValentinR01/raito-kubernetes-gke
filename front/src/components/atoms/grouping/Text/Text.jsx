@@ -6,7 +6,6 @@ import TextStyle from './Text.style';
 const Text = ({
     className,
     children,
-    color,
     size,
 }) => {
   return (
@@ -14,7 +13,6 @@ const Text = ({
         // Component
         className={className}
         // Style
-        $color={color}
         $size={size}
     >
         {children}
@@ -31,19 +29,12 @@ Text.propTypes = {
     'large',
     'xlarge',
   ]),
-  color: PropTypes.oneOf([
-    'cream',
-    'terra',
-    'primary',
-    'secondary'
-  ]),
 }
 
 Text.defaultProps = {
   children: null,
   className: null,
   size: 'medium',
-  color: 'primary',
 }
 
 export default Text;

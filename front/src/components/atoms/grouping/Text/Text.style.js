@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 
 const TextStyle = styled.p`
-    color: blue;
     ${({ $size }) => {
         let fontSize;
         switch ($size) {
