@@ -15,8 +15,14 @@
 • [Naiara Trivino](https://github.com/nt-95)       
 • [Paola Cyprien](https://github.com/Pao-La-CCC)       
 • [Tania Mahouche](https://github.com/TaniaMAHOUCHE)        
-• [Valentin Mariot](https://github.com/valentinmariot)         
-      
+• [Valentin Mariot](https://github.com/valentinmariot)          
+
+## Premier lancement :      
+• `docker-compose up -d && cd ./front && npm i && npm start`       
+
+## Lancement : 
+• `docker-compose up -d && cd ./front && npm start`       
+
 ## Workflow :       
               
 1. Les PO créent les tickets       
@@ -32,8 +38,10 @@
 • `git checkout develop`     
 • `git fetch -a`     
 • `git checkout -b raito-numéroduticket origin/develop`     
-• `git push` -> Votre terminal va vous donner un lien à copier/coller     
-     
+• `git push`  -> Votre terminal va vous donner la commande à copier/coller qui ressemblera à la seconde option        
+    OU          
+• `git push --set-upstream origin [nom de la branch]`        
+                
 ### Commit :      
 • `git commit -m '[Nom du composant/de la feuille éditée] - description`     
      

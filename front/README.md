@@ -25,11 +25,13 @@
 7. Une fois la MR validée, merge par le dev’ propriétaire de la branche.       
              
 ### Création d'une *branch* :     
-• `git checkout develop`     
+• `git checkout develop` -> On crée toujours les branch depuis develop. Le code est déployé sur prod par les PO.          
 • `git fetch -a`     
-• `git checkout -b raito-numéroduticket origin/develop`     
-• `git push` -> Votre terminal va vous donner un lien à copier/coller     
-     
+• `git checkout -b raito-numéroduticket origin/develop`             
+• `git push`  -> Votre terminal va vous donner la commande à copier/coller qui ressemblera à la seconde option        
+    OU          
+• `git push --set-upstream origin [nom de la branch]`        
+             
 ### Commit :      
 • `git commit -m '[Nom du composant/de la feuille éditée] - description`     
      
