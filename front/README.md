@@ -27,7 +27,7 @@
 ### Création d'une *branch* :     
 • `git checkout develop`     
 • `git fetch -a`     
-• `git checkout -b raito-numéroduticket`     
+• `git checkout -b raito-numéroduticket origin/develop`     
 • `git push` -> Votre terminal va vous donner un lien à copier/coller     
      
 ### Commit :      
