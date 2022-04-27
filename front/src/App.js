@@ -1,14 +1,15 @@
 import './App.css';
 import ThemeProvider from './providers/ThemeProvider';
-import Text from './components/atoms/grouping/Text/Text'
+import Text from './components/atoms/grouping/Text/Text';
+import Button from './components/atoms/forms/Button/Button';
 
 function App() {
-  console.log('themeProvider : ', ThemeProvider);
-  console.log('themeProvider.ThemeProvider : ', ThemeProvider.theme);
+
   return (
-    <ThemeProvider>
+    <ThemeProvider chosenTheme='dark'>
       <div className="App">
-        <Text className='coucou' ></Text>
+        <Text size="large" color="secondary">RAITŌ</Text>
+        <Button type='submit' disbled>El famoso button</Button>
       </div>
     </ThemeProvider>
   );

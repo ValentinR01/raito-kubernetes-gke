@@ -1,5 +1,6 @@
 import React, { useMemo, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { ThemeProvider as Provider } from 'styled-components';
 
 import ThemeContext from '../contexts/ThemeContext';
 
@@ -10,7 +11,7 @@ import { light, dark } from '../style/themes';
 
 const ThemeProvider = ({ children, chosenTheme }) => {
     const [theme, setTheme] = useState('light');
-
+    
     const values = {
         theme,
         setTheme,
@@ -43,16 +44,18 @@ const ThemeProvider = ({ children, chosenTheme }) => {
                 }
             });
     }, []);
-
+    
     return (
-        <ThemeContext.Provider value={values} theme={themeObject}>
-            <ResetStyle />
-            <FontStyles />
-            <GlobalStyle />
-            <div className={`theme theme--${chosenTheme || theme}`}>
-                {children}
-            </div>
-        </ThemeContext.Provider>
+        <Provider theme={themeObject}>
+            <ThemeContext.Provider value={values} >
+                <ResetStyle />
+                <FontStyles />
+                <GlobalStyle />
+                <div className={`theme theme--${chosenTheme || theme}`}>
+                    {children}
+                </div>
+            </ThemeContext.Provider>
+        </Provider>
     );
 };
 

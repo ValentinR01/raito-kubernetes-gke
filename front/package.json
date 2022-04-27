@@ -1,5 +1,21 @@
 {
-  "name": "front",
+  "name": "raito",
+  "authors": {
+    "- BACK -" : [
+      "• Chloé Doustalet",
+      "• Mélissande Dizy",
+      "• Nassim Yazi",
+      "• Nicolas Foessel",
+      "• Valentin Rajeunier"
+    ],
+    "- FRONT -" : [
+      "• Doriane Farau",
+      "• Naiara Trivino",
+      "• Paola Cyprien",
+      "• Tania Mahouche",
+      "• Valentin Mariot"
+    ]
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {

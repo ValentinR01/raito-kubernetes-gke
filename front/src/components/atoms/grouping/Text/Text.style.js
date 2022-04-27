@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components'
 
 const TextStyle = styled.p`
+    color: ${({ theme, $color }) => theme.colors[$color]};
+
     ${({ $size }) => {
         let fontSize;
         switch ($size) {
@@ -21,6 +23,8 @@ const TextStyle = styled.p`
             font-size: ${fontSize}px;
         `
     }}
+
+
 `;
 
 export default TextStyle;

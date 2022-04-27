@@ -12,11 +12,11 @@ const general = {
     secondaryActive: '#0b4a9c',
     secondaryDisabled: '#404955',
 
-    // tertiary
-    tertiary: '#a44d4d',
-    tertiaryHover: '#ce6060',
-    tertiaryActive: '#cf3535',
-    tertiaryDisabled: '#ce6f6f',
+    // TERRA
+    terra: '#a44d4d',
+    terraHover: '#ce6060',
+    terraActive: '#cf3535',
+    terraDisabled: '#ce6f6f',
 
     // GENERALS
     vanta: '#000',
