@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from '../../atoms/forms/Button/Button';
+import Button from "components/atoms/forms/Button/Button";
 import { useCallback } from 'react';
 
-import useTheme from '../../../hooks/useTheme';
+import useTheme from "hooks/useTheme";
 
 const Header = () => {
     const { theme, setTheme} = useTheme();
