@@ -32,9 +32,10 @@ Text.propTypes = {
     'xlarge',
   ]),
   color: PropTypes.oneOf([
-    'primary',
-    'secondary',
+    'cream',
     'terra',
+    'primary',
+    'secondary'
   ]),
 }
 
@@ -42,7 +43,7 @@ Text.defaultProps = {
   children: null,
   className: null,
   size: 'medium',
-  color: 'primary'
+  color: 'primary',
 }
 
 export default Text;
