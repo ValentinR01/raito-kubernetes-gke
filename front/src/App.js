@@ -1,9 +1,9 @@
-import './App.css';
+import "App.css";
 import React from 'react';
-import ThemeProvider from './providers/ThemeProvider';
-import Text from './components/atoms/grouping/Text/Text';
-import Button from './components/atoms/forms/Button/Button';
-import Header from './components/organisms/Header/Header';
+import ThemeProvider from "providers/ThemeProvider";
+import Text from "components/atoms/grouping/Text/Text";
+import Button from "components/atoms/forms/Button/Button";
+import Header from "components/organisms/Header/Header";
 
 // @NOTE - [TODO | Val'] : debug <Header /> for toggle theme
 

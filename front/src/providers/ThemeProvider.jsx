@@ -2,12 +2,12 @@ import React, { useMemo, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider as Provider } from 'styled-components';
 
-import ThemeContext from '../contexts/ThemeContext';
+import ThemeContext from "contexts/ThemeContext";
 
-import ResetStyle from '../style/global/reset';
-import FontStyles from '../style/global/fonts';
-import GlobalStyle from '../style/global/global';
-import { dark, light } from '../style/themes';
+import ResetStyle from "style/global/reset";
+import FontStyles from "style/global/fonts";
+import GlobalStyle from "style/global/global";
+import { dark, light } from "style/themes";
 
 const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState('light');
