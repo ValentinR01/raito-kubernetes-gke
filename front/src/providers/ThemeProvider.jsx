@@ -7,26 +7,26 @@ import ThemeContext from '../contexts/ThemeContext';
 import ResetStyle from '../style/global/reset';
 import FontStyles from '../style/global/fonts';
 import GlobalStyle from '../style/global/global';
-import { light, dark } from '../style/themes';
+import { dark, light } from '../style/themes';
 
-const ThemeProvider = ({ children, chosenTheme }) => {
+const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState('light');
-    
+
     const values = {
         theme,
         setTheme,
     };
 
     const themeObject = useMemo(() => {
-        switch (chosenTheme || theme) {
-        case 'dark': {
-            return dark;
+        switch (theme) {
+            case 'dark': {
+                return dark;
+            }
+            default: {
+                return light;
+            }
         }
-        default: {
-            return light;
-        }
-        }
-    }, [chosenTheme, theme]);
+    }, [theme]);
 
     useEffect(() => {
         window
@@ -44,14 +44,17 @@ const ThemeProvider = ({ children, chosenTheme }) => {
                 }
             });
     }, []);
-    
+
     return (
         <Provider theme={themeObject}>
-            <ThemeContext.Provider value={values} >
+            <ThemeContext.Provider value={values}>
                 <ResetStyle />
                 <FontStyles />
                 <GlobalStyle />
-                <div className={`theme theme--${chosenTheme || theme}`}>
+                <div
+                    className={`theme theme--${theme}`}
+                    theme={theme}
+                >
                     {children}
                 </div>
             </ThemeContext.Provider>

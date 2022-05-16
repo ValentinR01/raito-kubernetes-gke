@@ -6,11 +6,13 @@ const common = {
 };
 
 export const light = {
+    name: 'light',
     ...common,
     colors: { ...themeColorLight },
 };
 
 export const dark = {
+    name: 'dark',
     ...common,
     colors: { ...themeColorDark },
 };
