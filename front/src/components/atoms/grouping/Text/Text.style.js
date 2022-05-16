@@ -23,8 +23,6 @@ const TextStyle = styled.p`
             font-size: ${fontSize}px;
         `
     }}
-
-
 `;
 
 export default TextStyle;
