@@ -55,6 +55,7 @@ CREATE TABLE `content` (
   `color` varchar(6) DEFAULT NULL,
   `music` varchar(40) DEFAULT NULL,
   `picture` varchar(40) DEFAULT NULL,
+  `description` varchar(1000) DEFAULT NULL,
   `note` decimal(3,1) DEFAULT NULL,
   `nb_note` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
