@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Category;
 use App\Factory\PDOFactory;
 use App\Model\CategoryModel;
 
@@ -14,7 +13,7 @@ class CategoryController extends BaseController
 
     public function executeIndex()
     {
-        $categoryModel = new CategoryModel(new \App\Factory\PDOFactory());
+        $categoryModel = new CategoryModel(new PDOFactory());
         $category = $categoryModel->getAllCategory();
 
         $this->render(

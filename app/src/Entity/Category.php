@@ -37,7 +37,7 @@ class Category extends BaseEntity
      * @param string $name
      * @return Category
      */
-    public function setDate(string $name): Category
+    public function setName(string $name): Category
     {
         $this->name = $name;
         return $this;

@@ -1,11 +1,7 @@
 <?php
-
-foreach ($query->fetchAll() as $category) {
-//    var_dump($category);
-    $res[] = [
-        'id' => $category['id'],
-        "name" => $category['name'],
-    ];
-}
+$res[] = [
+    'id' => $category->getId(),
+    "name" => $category->getName(),
+];
 
 echo json_encode($res);
