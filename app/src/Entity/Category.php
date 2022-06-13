@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Entity;
-use App\Entity\BaseEntity;
 
 class Category extends BaseEntity
 {

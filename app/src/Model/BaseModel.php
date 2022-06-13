@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-use App\Interfaces\ConnectionInterface;
+use App\Interface\ConnectionInterface;
 
 abstract class BaseModel {
     protected \PDO $pdo;

@@ -1,6 +1,10 @@
 <?php
 
-class PDOFactory
+namespace App\Factory;
+use App\Interface\ConnectionInterface;
+use PDO;
+
+class PDOFactory implements ConnectionInterface
 {
     public PDO $pdo;
 

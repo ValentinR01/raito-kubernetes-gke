@@ -11,5 +11,7 @@
       "email": "raito_team@raito.com"
     }
   ],
-  "require": {}
+  "require": {
+    "ext-pdo": "*"
+  }
 }

@@ -1,22 +1,11 @@
 <?php
 
+use App\Factory\PDOFactory;
+
 require_once 'headers.php';
 require_once 'Factory/PDOFactory.php';
 require_once 'Entity/Category.php';
+require_once 'Controller/CategoryController.php';
 
-$pdo = (new PDOFactory())->getPdo();
-
-$query = $pdo->query('SELECT * FROM category');
-$query->setFetchMode(PDO::FETCH_ASSOC);
-
-$res = [];
-
-foreach ($query->fetchAll() as $category) {
-//    var_dump($category);
-    $res[] = [
-        'id' => $category['id'],
-        "name" => $category['name'],
-    ];
-}
-
-echo json_encode($res);
+$myController = new \App\Controller\CategoryController();
+$myController->executeIndex();

@@ -5,7 +5,7 @@ namespace App\Controller;
 abstract class BaseController
 {
     private string $templateFile = __DIR__ . '/../View/index.php';
-    private string $viewsDir = __DIR__ . '/../View/Frontend/';
+    private string $viewsDir = __DIR__ . '/../View/API/';
     protected array $params;
 
     public function __construct(string $action, array $params = [])
@@ -18,7 +18,7 @@ abstract class BaseController
         }
     }
 
-    public function render(string $template, array $arguments, string $title)
+    public function render(string $template, array $arguments)
     {
         $view = $this->viewsDir . $template;
 
