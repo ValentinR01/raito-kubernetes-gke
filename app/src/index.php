@@ -10,4 +10,4 @@ require_once 'Factory/PDOFactory.php';
 require_once 'Entity/Category.php';
 
 $myController = new CategoryController('Index');
-$myController->executeIndex();
+

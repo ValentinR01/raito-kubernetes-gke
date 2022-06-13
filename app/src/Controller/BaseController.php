@@ -38,6 +38,6 @@ abstract class BaseController
     public function renderJSON($content)
     {
         //$this->HTTPResponse->addHeader('Content-Type: application/json');
-        echo json_encode($content);
+        echo json_encode($content, JSON_PRETTY_PRINT);
     }
 }
