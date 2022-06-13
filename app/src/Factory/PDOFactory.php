@@ -10,9 +10,9 @@ class PDOFactory implements ConnectionInterface
     public PDO $pdo;
 
     private static string $dsn = 'mysql:host=db';
-    private static string $username = 'Raito';
+    private static string $username = 'root';
     private static string $password = 'password';
-    const DATABASE = 'db';
+    const DATABASE = 'Raito';
 
     public static function getMysqlConnection(): PDO
     {

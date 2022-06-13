@@ -5,7 +5,7 @@ namespace App\Entity;
 class Category extends BaseEntity
 {
     private int $id;
-    private int $name;
+    private string $name;
 
     /**
      * @return int
