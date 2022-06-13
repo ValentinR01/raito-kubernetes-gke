@@ -4,7 +4,7 @@ namespace App\Controller;
 
 abstract class BaseController
 {
-    private string $templateFile = __DIR__ . '/../View/index.php';
+    private string $templateFile = __DIR__ . '/../View/template.php';
     private string $viewsDir = __DIR__ . '/../View/API/';
     protected array $params;
 
@@ -33,5 +33,11 @@ abstract class BaseController
         require $this->templateFile;
         exit;
 
+    }
+
+    public function renderJSON($content)
+    {
+        //$this->HTTPResponse->addHeader('Content-Type: application/json');
+        echo json_encode($content);
     }
 }

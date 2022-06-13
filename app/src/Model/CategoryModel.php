@@ -13,6 +13,6 @@ class CategoryModel extends BaseModel
     {
         $query = $this->pdo->query('SELECT * FROM '  . PDOFactory::DATABASE . '.category');
         $query->execute();
-        return $query->fetchAll(PDO::FETCH_CLASS,'App\Entity\Category');
+        return $query->fetchAll();
     }
 }

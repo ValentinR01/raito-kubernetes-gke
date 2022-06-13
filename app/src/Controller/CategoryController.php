@@ -16,9 +16,7 @@ class CategoryController extends BaseController
         $categoryModel = new CategoryModel(new PDOFactory());
         $category = $categoryModel->getAllCategory();
 
-        $this->render(
-            'category.php',['category'=> $category]
-        );
+        $this->renderJSON($category);
     }
 /*
 
