@@ -17,6 +17,12 @@ class CategoryController extends BaseController
         $category = $categoryModel->getAllCategory();
         $this->renderJSON($category);
     }
+
+    public function executeTest()
+    {
+        $lol = 'lol';
+        $this->renderJSON($lol);
+    }
 /*
 
     public function executeShow()
