@@ -3,7 +3,7 @@
         'name' => 'valentinrejaunier/src',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
-        'reference' => 'e997b3a55c091efdc84aa047b273ba1c1d9a8750',
+        'reference' => '1d8c5aa59dc4d22d81729117ff8d6cbf690c06ea',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'valentinrejaunier/src' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => 'e997b3a55c091efdc84aa047b273ba1c1d9a8750',
+            'reference' => '1d8c5aa59dc4d22d81729117ff8d6cbf690c06ea',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
