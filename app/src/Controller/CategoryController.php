@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Factory\PDOFactory;
 use App\Model\CategoryModel;
+use App\HTTP\HTTPRequest;
 
 class CategoryController extends BaseController
 {
@@ -20,8 +21,8 @@ class CategoryController extends BaseController
 
     public function executeTest()
     {
-        $lol = 'lol';
-        $this->renderJSON($lol);
+        $response = new HTTPRequest();
+        $this->renderJSON($response->getBody());
     }
 /*
 

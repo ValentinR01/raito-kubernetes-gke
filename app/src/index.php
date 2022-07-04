@@ -11,6 +11,6 @@ require_once 'Entity/Category.php';
 require_once 'Router/Router.php';
 
 
-
+ob_start();
 $router = new \App\Router\Router();
 $router->getController();
