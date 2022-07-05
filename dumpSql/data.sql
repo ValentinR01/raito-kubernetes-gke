@@ -88,6 +88,7 @@ INSERT INTO `content_type` (`id`, `name`) VALUES
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `email` varchar(75) DEFAULT NULL,
+  `password` varchar(120) DEFAULT NULL,
   `id_role` tinyint(4) DEFAULT NULL,
   `nb_creation` smallint(6) DEFAULT NULL,
   `date_inscription` datetime NOT NULL
