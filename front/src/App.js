@@ -13,10 +13,10 @@ import {
   Route
 } from "react-router-dom";
 import Main from "components/organisms/main/Main";
-import Respiration from "pages/respiration/Respiration";
-import Ambiances from "pages/ambiances/Ambiances";
-import Profil from "pages/profil/Profil";
-import Home from "pages/homeCom/Home";
+import Respiration from "components/pages/respiration/Respiration";
+import Ambiances from "components/pages/ambiances/Ambiances";
+import Profil from "components/pages/profil/Profil";
+import Home from "components/pages/homeCom/Home";
 
 
 function App() {

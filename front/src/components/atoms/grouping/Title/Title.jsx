@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { getStyle } from "./Title.style.jsx"
+import  TitleStyle  from "./Title.style.jsx"
 
 const Title = ({
     className,
@@ -9,7 +9,7 @@ const Title = ({
     size,
 }) => {
   return (
-    <getStyle
+    < TitleStyle
         // Component
         className={className}
         // Style
@@ -17,7 +17,7 @@ const Title = ({
         $size={size}
     >
         {children}
-    </getStyle>
+    </ TitleStyle >
   )
 }
 
