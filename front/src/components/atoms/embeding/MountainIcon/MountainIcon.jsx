@@ -1,7 +1,7 @@
 import React from 'react'
 import MountainIconStyle from './MountainIcon.style'
 
-const MountainIcon = (width, fill) => {
+const MountainIcon = () => {
   return (
       <MountainIconStyle>
         <svg width={800} id="Calque_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.34 234.14">
