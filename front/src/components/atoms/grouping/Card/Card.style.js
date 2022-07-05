@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const CardStyle = styled.section`
   background-color: #f3edd7;
@@ -7,6 +7,18 @@ const CardStyle = styled.section`
   padding: 10px;
   border-radius: 10px;
   text-align: center;
+
+  ${({ $medium, $small }) => {
+    let width = "1133px";
+    if ($medium) {
+      width = "742px";
+    } else if ($small) {
+      width = "371px";
+    }
+    return css`
+      width: ${width};
+    `;
+  }};
 `;
 
 export default CardStyle;
