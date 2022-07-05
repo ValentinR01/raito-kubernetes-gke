@@ -32,7 +32,7 @@ const sidebarData = [
     }
   ];
 
-function Sidebar() {
+function SideBar() {
   return (
     <div className="sidebar-nav" >
 
@@ -63,4 +63,4 @@ function Sidebar() {
   )
 }
 
-export default Sidebar ;
+export default SideBar ;

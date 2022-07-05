@@ -4,7 +4,6 @@ import ThemeProvider from "providers/ThemeProvider";
 //import Text from "components/atoms/grouping/Text/Text";
 //import Button from "components/atoms/forms/Button/Button";
 //import Header from "components/organisms/Header/Header";
-import Sidebar from "components/organisms/sidebar/Sidebar";
 
 // @NOTE - [TODO | Val'] : debug <Header /> for toggle theme
 
@@ -17,6 +16,7 @@ import Respiration from "components/pages/respiration/Respiration";
 import Ambiances from "components/pages/ambiances/Ambiances";
 import Profil from "components/pages/profil/Profil";
 import Home from "components/pages/homeCom/Home";
+import SideBar from 'components/organisms/SideBar/SideBar';
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="App">
-     <Sidebar></Sidebar>
+     <SideBar></SideBar>
      <Main >
            <Routes>
               < Route path="/"   element={ <Home />} />
