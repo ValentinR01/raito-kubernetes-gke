@@ -2,14 +2,20 @@ import styled, { css } from "styled-components";
 
 const StackStyle = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   ${({ $horizontal }) => {
-    let display;
+    let flexDirection;
+    let justifyContent;
     if ($horizontal) {
-      display = "flex";
+      flexDirection = "initial";
+      justifyContent = "space-evenly";
     }
     return css`
-      display: ${display};
+      flex-direction: ${flexDirection};
+      justify-content: ${justifyContent};
     `;
   }};
 `;
