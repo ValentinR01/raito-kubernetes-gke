@@ -18,4 +18,20 @@ class HTTPRequest
         $entityBody = file_get_contents('php://input');
         return $entityBody;
     }
+
+    public function getHeader(){
+        return $_SERVER;
+    }
+
+    public function getBasicAuthentification()
+    {
+        $credentials = array(
+            "username" => $_SERVER['PHP_AUTH_USER'],
+            "pwd" =>$_SERVER['PHP_AUTH_PW'],
+        );
+        return $credentials;
+    }
+
+   
+
 }

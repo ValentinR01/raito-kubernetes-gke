@@ -22,8 +22,9 @@ class CategoryController extends BaseController
     public function executeTest()
     {
         $response = new HTTPRequest();
-        $this->renderJSON($response->getBody());
+        $this->renderJSON($response->getHeader());
     }
+
 /*
 
     public function executeShow()
