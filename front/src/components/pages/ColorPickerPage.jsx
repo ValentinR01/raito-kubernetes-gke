@@ -5,7 +5,7 @@ import React from "react";
 const ColorPickerPage = () => {
   return (
     <PageTemplate>
-      <ColorField label="Pick a color" />
+      <ColorField label="Choisissez la couleur de la lumière" />
     </PageTemplate>
   );
 };
