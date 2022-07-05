@@ -1,6 +1,6 @@
 import React from 'react'
 import CloudOne from '../CloudOne/CloudOne'
-import CloudSecond from '../CloudOne/CloudSecond'
+import CloudSecond from '../CloudSecond/CloudSecond'
 import MountainIcon from '../MountainIcon/MountainIcon'
 import AppBackgroundStyle from './AppBackground.style'
 
