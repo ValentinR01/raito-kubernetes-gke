@@ -1,11 +1,10 @@
 import CloudOneStyle from "./CloudOne.style";
 
-const CloudOne = (width, stroke) => {
+const CloudOne = () => {
   return (
     <CloudOneStyle>
       <svg
         width={"300"} 
-        // height={"350"}
         viewBox="0 0 357 150"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +15,6 @@ const CloudOne = (width, stroke) => {
           x2="254.185"
           y2="95.0742"
           stroke="#97A9BB"
-          // stroke={stroke}
           stroke-opacity="0.6"
           stroke-width="30"
           stroke-linecap="round"
@@ -26,7 +24,6 @@ const CloudOne = (width, stroke) => {
           y1="134.259"
           x2="225.222"
           y2="134.259"
-          // stroke={stroke}
           stroke="#97A9BB"
           stroke-opacity="0.6"
           stroke-width="30"
@@ -37,7 +34,6 @@ const CloudOne = (width, stroke) => {
           y1="57.5928"
           x2="186.037"
           y2="57.5928"
-          // stroke={stroke}
           stroke="#97A9BB"
           stroke-opacity="0.6"
           stroke-width="30"
@@ -48,7 +44,6 @@ const CloudOne = (width, stroke) => {
           y1="15"
           x2="341.925"
           y2="15"
-          // stroke={stroke}
           stroke="#97A9BB"
           stroke-opacity="0.6"
           stroke-width="30"

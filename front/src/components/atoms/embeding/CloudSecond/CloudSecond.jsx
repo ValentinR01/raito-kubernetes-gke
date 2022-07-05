@@ -1,11 +1,10 @@
 import CloudSecondStyle from "./CloudSecond.style"
 
-const CloudSecond = (width, stroke) => {
+const CloudSecond = () => {
   return (
     <CloudSecondStyle>
         <svg 
             width={"250"} 
-            // height={"350"} 
             viewBox="0 0 257 70"
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +15,6 @@ const CloudSecond = (width, stroke) => {
             x2="242" 
             y2="15" 
             stroke="#97A9BB"
-            // stroke={stroke} 
             stroke-opacity="0.6" 
             stroke-width="30" 
             stroke-linecap="round"
@@ -27,7 +25,7 @@ const CloudSecond = (width, stroke) => {
             x2="226.212" 
             y2="54.1855" 
             stroke="#97A9BB"
-            // stroke={stroke} 
+
             stroke-opacity="0.6" 
             stroke-width="30" 
             stroke-linecap="round"
@@ -38,7 +36,6 @@ const CloudSecond = (width, stroke) => {
             x2="24.471" 
             y2="15"
             stroke="#97A9BB" 
-            // stroke={stroke} 
             stroke-opacity="0.6" 
             stroke-width="30" 
             stroke-linecap="round"
