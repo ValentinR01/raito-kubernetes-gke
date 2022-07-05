@@ -1,13 +1,11 @@
 import styled, { css } from "styled-components";
 
 const StackStyle = styled.div`
-  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
 
   ${({ $horizontal }) => {
-    let flexDirection;
+    let flexDirection = "column";
     let justifyContent;
     if ($horizontal) {
       flexDirection = "initial";
