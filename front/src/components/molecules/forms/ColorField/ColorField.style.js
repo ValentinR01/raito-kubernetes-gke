@@ -1,9 +1,7 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const ColorFieldStyle = styled.div`
-  ${({}) => {
-    return css``;
-  }};
+  margin: 10px;
 `;
 
 export default ColorFieldStyle;
