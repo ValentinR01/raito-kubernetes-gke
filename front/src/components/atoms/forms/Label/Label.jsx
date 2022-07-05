@@ -1,13 +1,15 @@
-import PropTypes from "prop-types";
-import React from "react";
-import LabelStyle from "./Label.style";
 
-const Label = ({ children }) => {
-  return <LabelStyle>{children}</LabelStyle>;
-};
+import React      from 'react';
+import PropTypes  from 'prop-types';
+
+
+
+const Label = props => (
+  <span className="a__label">{props.text}</span>
+);
 
 Label.propTypes = {
-  children: PropTypes.string,
+  text: PropTypes.string.isRequired,
 };
 
 export default Label;
