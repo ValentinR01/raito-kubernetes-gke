@@ -42,7 +42,7 @@ CREATE TABLE `content` (
   `id` int(11) NOT NULL,
   `title` varchar(30) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `person_role` varchar(15) DEFAULT NULL,
+  `id_user_role` int (5) NOT NULL,
   `id_category` int(11) NOT NULL,
   `id_type` int(11) NOT NULL,
   `status` tinyint(1) NOT NULL,

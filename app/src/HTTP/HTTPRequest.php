@@ -28,7 +28,7 @@ class HTTPRequest
         // echo json_encode($_SERVER);
         if (!isset ($_SERVER['PHP_AUTH_USER']) && !isset ($_SERVER['PHP_AUTH_PW'])) {
             http_response_code(404);
-            return ('Password and  email does not exist');
+            return ('Password and email do not exist');
         }
         elseif (!isset ($_SERVER['PHP_AUTH_USER'])) {
             http_response_code(404);
