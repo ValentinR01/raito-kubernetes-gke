@@ -1,11 +1,7 @@
 import "App.css";
 import React from 'react';
 import ThemeProvider from "providers/ThemeProvider";
-
-import {
-  Routes,
-  Route
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
 
