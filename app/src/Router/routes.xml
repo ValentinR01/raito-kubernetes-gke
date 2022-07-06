@@ -7,6 +7,7 @@
     <!-- User Management -->
     <route path="register" action="AddUser" controller="UserController"/>
     <route path="login" action="Login" controller="UserController"/>
+    <route path="color" action="Color" controller="ColorController"/>
 
     <!-- Content -->
     <route path="exercice" action="ExerciceList" controller="ContentController"/>
