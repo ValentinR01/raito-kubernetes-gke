@@ -11,5 +11,8 @@
             "email": "vale.vr@icloud.com"
         }
     ],
-    "require": {}
+    "require": {
+        "firebase/php-jwt": "^6.2",
+        "paragonie/sodium_compat": "^1.17"
+    }
 }

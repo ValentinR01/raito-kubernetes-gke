@@ -1,14 +1,20 @@
 <?php
 
 namespace App\Controller;
+require_once('vendor/autoload.php');
+use \Firebase\JWT\JWT;
+
 
 use App\Entity\User;
 use App\Factory\PDOFactory;
 use App\HTTP\HTTPRequest;
 use App\Model\UserModel;
+use Firebase\JWT\Key;
+
 
 class UserController extends BaseController
 {
+    private $JWTKey = 'DJplHnT6&1qyTa22aYu*d';
     /**
      * Login
      */
@@ -50,11 +56,13 @@ class UserController extends BaseController
         }
     }
 
+
     /**
      * Register
      */
     public function executeAddUser()
     {
+        $ex = $this->GenerateJWT('v@gmail.com');
         $response = new HTTPRequest();
         $response = $response->getBasicAuthentification();
         if (is_string($response)) {
@@ -104,5 +112,22 @@ class UserController extends BaseController
         }
 
     }
+
+    private function GenerateJWT(string $email)
+    {
+        $generatedDate = new \DateTime(); 
+        $generatedDate->setTimezone(new \DateTimeZone('Europe/Paris'));
+
+        $payload = [
+            'email' => $email,
+            'generateAt' =>  date_timestamp_get($generatedDate),
+            'expiredAt' => strtotime('+7 day', date_timestamp_get($generatedDate))
+        ];
+
+        $jwt = JWT::encode($payload, $this->JWTKey, 'HS256');
+        //$decoded = JWT::decode($jwt, new Key($this->JWTKey, 'HS256'));
+        $this->renderJSON($jwt);
+    }
+
 
 }
