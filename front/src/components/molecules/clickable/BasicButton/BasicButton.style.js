@@ -10,6 +10,7 @@ const BasicButtonStyle = styled.button`
     border-radius: 14px;
         &:hover {
             background-color: ${props => (props.primary ? "#ce6060" : "none")};
+            color: ${props => (props.primary ? "#F3EDD7" : "#ce6060")};
         }
 `;
 

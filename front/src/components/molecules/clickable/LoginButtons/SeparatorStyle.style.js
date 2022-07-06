@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Separator = styled.span`
+const SeparatorStyle = styled.span`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -10,4 +10,4 @@ const Separator = styled.span`
 
 `;
 
-export default Separator;
+export default SeparatorStyle;
