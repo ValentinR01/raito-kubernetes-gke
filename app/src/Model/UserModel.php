@@ -18,13 +18,18 @@ class UserModel extends BaseModel
         return $query->fetchAll();
     }
 
-    public function getUserByEmail(string $email): user
+    public function getUserByEmail(string $email): user|bool
     {
-        $query = $this->pdo->prepare('SELECT * FROM ' . PDOFactory::DATABASE . '.users WHERE email = :?');
-        //$query->bindvalue(':email', $email, \PDO::PARAM_STR);
+        $query = $this->pdo->prepare('SELECT * FROM ' . PDOFactory::DATABASE . '.users WHERE email=?');
+        $query->bindvalue(':email', $email, \PDO::PARAM_STR);
         $query->execute([$email]);
-        // $query-> setFetchMode(\PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'App\Entity\user');
-        return $query->fetch();
+        $query-> setFetchMode(\PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'App\Entity\user');
+        $user = $query->fetch();
+        if ($user) {
+            return $user;
+        } else {
+            return false;
+        }
     }
 
     public function getUserExistCheck(string $email): bool

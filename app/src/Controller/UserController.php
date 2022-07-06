@@ -31,39 +31,21 @@ class UserController extends BaseController
             {
                 http_response_code(404);
                 $this->renderJSON("User not found");
-            }
-
-            $user = $userModel->getUserByEmail($email);
-            if ($email == $user->getEmail()) {
-                if (hash('sha256', $password) == $user->getPassword()) {
-                    http_response_code(200);
-                    $this->renderJSON("User and password correct, you can log in");
-                }
-                else
-                {
-                    http_response_code(500);
-                    $this->renderJSON("Password incorrect for the user");
-                }
-            }
-
-            /*foreach ($users as $user){
-                if ($email == $user->getEmail()){
-                    if (hash('sha256', $password) == $user->getPassword()){
-                        session_destroy();
-                        session_start();
-                        $_SESSION['logged_in'] = true;
-                        $_SESSION['USER_ID'] = $user->getId();
-                        $_SESSION['admin'] = $user->getAdmin();
-                        $_SESSION['LOGINMESSAGE'] = "Vous êtes maintenant connecté";
-
-                        return header("Location: /");
+            } else {
+                $user = $userModel->getUserByEmail($email);
+                if ($email == $user->getEmail()) {
+                    if (hash('sha256', $password) == $user->getPassword()) {
+                        http_response_code(200);
+                        $this->renderJSON("User and password correct, you can log in");
                     }
-
-                }*/
-            else
-            {
-                http_response_code(500);
-                $this->renderJSON("Can't get the email of the user");
+                    else {
+                        http_response_code(500);
+                        $this->renderJSON("Password incorrect for the user");
+                    }
+                } else {
+                    http_response_code(500);
+                    $this->renderJSON("Can't get the email of the user");
+                }
             }
         }
     }
