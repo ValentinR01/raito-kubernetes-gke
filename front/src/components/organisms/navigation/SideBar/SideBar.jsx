@@ -1,5 +1,5 @@
 import ToriIcon from "components/atoms/embedding/ToriIcon/ToriIcon";
-import LogoIcon from "assetsSVG-main/Logo";
+import LogoIcon from "components/atoms/embedding/LogoIcon/LogoIcon";
 import React from "react";
 import "./Sidebar.css";
 import NavigationMenu from "components/organisms/navigation/NavigationMenu/NavigationMenu";
