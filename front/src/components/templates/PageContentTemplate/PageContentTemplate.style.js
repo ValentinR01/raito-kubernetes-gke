@@ -8,6 +8,10 @@ flex-direction: column;
 align-items:center;
 overflow:auto;
 scrollbar: hidden;
+-ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+      }
 }
 `;
 
