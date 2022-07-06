@@ -1,7 +1,7 @@
 import React from 'react'
 import LoginButtonStyle from "./LoginButtonStyle.style"
 
-const LoginButtons = () => {
+const LoginButton = () => {
   return (  
       <LoginButtonStyle>
         <svg width="21" height="21" viewBox="0 0 37 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,4 +12,4 @@ const LoginButtons = () => {
   )
 }
 
-export default LoginButtons
+export default LoginButton
