@@ -3,7 +3,7 @@ import NavigationMenuStyle from './NavigationMenu.style';
 import AmbianceIcone from 'assetsSVG-main/Ambiance';
 import MeditationIcon from 'assetsSVG-main/MeditationIcon';
 import ProfilIcone from 'assetsSVG-main/ProfilIcone';
-import NavigationMenuLink from 'components/molecules/nav/NavigationMenuLink';
+import NavigationMenuLink from 'components/molecules/navigation/NavigationMenuLink';
 
 
 
