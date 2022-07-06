@@ -15,8 +15,15 @@ class HTTPRequest
     
     public function getBody()
     {
-        $entityBody = file_get_contents('php://input');
-        return $entityBody;
+        if (!isset ($_POST)) {
+            http_response_code(404);
+            return ("Fields 'colorHexadecimal' do not exist");
+        }
+        elseif (empty($_POST)) {
+            http_response_code(400);
+            return("'colorHexadecimal' is empty");
+        }
+        else return $_POST;
     }
 
     public function getHeader(){
@@ -25,7 +32,7 @@ class HTTPRequest
 
     public function getBasicAuthentification()
     {
-        // echo json_encode($_SERVER);
+        // echo json_encode($_SERVER, JSON_PRETTY_PRINT);
         if (!isset ($_SERVER['PHP_AUTH_USER']) && !isset ($_SERVER['PHP_AUTH_PW'])) {
             http_response_code(404);
             return ('Fields password and email do not exist');
@@ -53,6 +60,20 @@ class HTTPRequest
 
     }
 
-   
+    public function getColor()
+    {
+        // echo json_encode($_SERVER, JSON_PRETTY_PRINT);
+        if (!isset ($_SERVER['PHP_AUTH_COLOR'])) {
+            http_response_code(404);
+            return ('Fields color does not exist');
+        } elseif (empty($_SERVER['PHP_AUTH_COLOR'])) {
+            http_response_code(400);
+            return('Color is empty');
+        } else return array(
+            "colorHexadecimal" => $_SERVER['PHP_AUTH_COLOR'],
+        );
+    }
+
+
 
 }
