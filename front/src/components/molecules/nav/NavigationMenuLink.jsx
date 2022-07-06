@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import MenuLinkStyle from './MenuLink.style';
+import NavigationMenuLinkStyle from './NavigationMenuLink.style';
 
 /**
  * @param {String} path The router path
@@ -9,13 +9,13 @@ import MenuLinkStyle from './MenuLink.style';
  * @returns 
  */
 
-const MenuLink = ({path, icon, title }) => {
+const NavigationMenuLink = ({path, icon, title }) => {
   return (
-    <MenuLinkStyle>
+    <NavigationMenuLinkStyle>
         <span className="icon-bar">{icon}</span>
         <Link to={path}>{title}</Link>
-    </MenuLinkStyle>
+    </NavigationMenuLinkStyle>
   )
 }
 
-export default MenuLink
+export default NavigationMenuLink

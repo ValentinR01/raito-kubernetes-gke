@@ -3,7 +3,7 @@ import NavigationMenuStyle from './NavigationMenu.style';
 import AmbianceIcone from 'assetsSVG-main/Ambiance';
 import MeditationIcon from 'assetsSVG-main/MeditationIcon';
 import ProfilIcone from 'assetsSVG-main/ProfilIcone';
-import MenuLink from 'components/molecules/nav/MenuLink';
+import NavigationMenuLink from 'components/molecules/nav/NavigationMenuLink';
 
 
 
@@ -28,9 +28,9 @@ const NavigationMenu = () => {
       
   return (
     <NavigationMenuStyle className="side-navbar-menu">
-          <MenuLink path={navMenuData.ambiances.path} icon={navMenuData.ambiances.icon} title={navMenuData.ambiances.title}/>
-          <MenuLink path={navMenuData.respiration.path} icon={navMenuData.respiration.icon} title={navMenuData.respiration.title}/>
-          <MenuLink path={navMenuData.profil.path} icon={navMenuData.profil.icon} title={navMenuData.ambiances.title}/>
+          <NavigationMenuLink path={navMenuData.ambiances.path} icon={navMenuData.ambiances.icon} title={navMenuData.ambiances.title}/>
+          <NavigationMenuLink path={navMenuData.respiration.path} icon={navMenuData.respiration.icon} title={navMenuData.respiration.title}/>
+          <NavigationMenuLink path={navMenuData.profil.path} icon={navMenuData.profil.icon} title={navMenuData.ambiances.title}/>
          </NavigationMenuStyle>
   )
 }

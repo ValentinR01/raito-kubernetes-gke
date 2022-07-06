@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-const MenuStyle = styled.li`
+const NavigationMenuLinkStyle = styled.li`
 color : #F3EDD7;
 list-style: none;
 text-transform: uppercase;
-cursor: pointer;
-  
+cursor: pointer;  
 `;
 
-export default MenuStyle;
+export default NavigationMenuLinkStyle;
