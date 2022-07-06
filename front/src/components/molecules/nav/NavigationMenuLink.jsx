@@ -1,5 +1,5 @@
+import StyledLink from 'components/atoms/text/Link/StyledLink.style';
 import React from 'react'
-import { Link } from 'react-router-dom'
 import NavigationMenuLinkStyle from './NavigationMenuLink.style';
 
 /**
@@ -13,7 +13,7 @@ const NavigationMenuLink = ({path, icon, title }) => {
   return (
     <NavigationMenuLinkStyle>
         <span className="icon-bar">{icon}</span>
-        <Link to={path}>{title}</Link>
+        <StyledLink to={path}>{title}</StyledLink>
     </NavigationMenuLinkStyle>
   )
 }
