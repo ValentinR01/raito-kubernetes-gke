@@ -1,17 +1,11 @@
 <?php
 
 require './vendor/autoload.php';
-
-
-use App\Controller\CategoryController;
-
-
 require_once 'CORS/Cors.php';
-require_once 'Factory/PDOFactory.php';
-require_once 'Entity/Category.php';
-require_once 'Router/Router.php';
+
+use App\Router\Router;
 
 
 ob_start();
-$router = new \App\Router\Router();
+$router = new Router();
 $router->getController();
