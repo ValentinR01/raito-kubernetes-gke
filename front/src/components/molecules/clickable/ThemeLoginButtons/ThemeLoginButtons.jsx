@@ -2,14 +2,15 @@ import React from 'react'
 import ThemeButton from 'components/atoms/forms/ThemeLoginButtons/ThemeButton'
 import Separator from 'components/atoms/forms/ThemeLoginButtons/Separator'
 import LoginButton from 'components/atoms/forms/ThemeLoginButtons/LoginButton'
+import ThemeLoginButtonsStyle from './ThemeLoginButtons.style'
 
 const ThemeLoginButtons = () => {
   return (    
-    <div>
+    <ThemeLoginButtonsStyle>
       <ThemeButton />
       <Separator /> 
       <LoginButton />
-    </div>
+    </ThemeLoginButtonsStyle>
   )
 }
 
