@@ -9,6 +9,24 @@ use PDO;
 
 class UserModel extends BaseModel
 {
+
+    public function getAllUsers(): array
+    {
+        $query = $this->pdo->query('SELECT * FROM ' . PDOFactory::DATABASE . '.users');
+        $query->execute();
+        $query->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, 'App\Entity\User');
+        return $query->fetchAll();
+    }
+
+    public function getUserByEmail(string $email): user
+    {
+        $query = $this->pdo->prepare('SELECT * FROM ' . PDOFactory::DATABASE . '.users WHERE email = :?');
+        //$query->bindvalue(':email', $email, \PDO::PARAM_STR);
+        $query->execute([$email]);
+        // $query-> setFetchMode(\PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'App\Entity\user');
+        return $query->fetch();
+    }
+
     public function getUserExistCheck(string $email): bool
     {
         $stmt = $this->pdo->prepare('SELECT * FROM ' . PDOFactory::DATABASE . '. users WHERE email=?');

@@ -14,16 +14,41 @@ class UserController extends BaseController
      */
     public function executeLogin()
     {
-        if (isset($_POST['CHECK'])) {
+        $response = new HTTPRequest();
+        $response = $response->getBasicAuthentification();
+        if (is_string($response)) {
+            echo($response);
+        }
+        else {
             //Récupération des valeurs
-            $email = $_POST['EMAIL'];
-            $password = $_POST['PASSWORD'];
-            $userManager = new UserManager (new PDOFactory());
-            $users = $userManager->getAllUsers();
+            $email = $response['email'];
+            $password = $response['password'];
 
-            foreach ($users as $user){
+            // Check if user exist
+            $userModel = new UserModel (new PDOFactory());
+            $userExist = $userModel->getUserExistCheck($email);
+            if (!$userExist)
+            {
+                http_response_code(404);
+                $this->renderJSON("User not found");
+            }
+
+            $user = $userModel->getUserByEmail($email);
+            if ($email == $user->getEmail()) {
+                if (hash('sha256', $password) == $user->getPassword()) {
+                    http_response_code(200);
+                    $this->renderJSON("User and password correct, you can log in");
+                }
+                else
+                {
+                    http_response_code(500);
+                    $this->renderJSON("Password incorrect for the user");
+                }
+            }
+
+            /*foreach ($users as $user){
                 if ($email == $user->getEmail()){
-                    if (md5($password) == $user->getPassword()){
+                    if (hash('sha256', $password) == $user->getPassword()){
                         session_destroy();
                         session_start();
                         $_SESSION['logged_in'] = true;
@@ -34,13 +59,11 @@ class UserController extends BaseController
                         return header("Location: /");
                     }
 
-                }
-                else
-                {
-                    $_SESSION['ERRORMESSAGE'] = "Utilisateur introuvable.. Veuillez rentrer un email et un mot de passe valide.";
-                    header("Location: /login");
-                }
-
+                }*/
+            else
+            {
+                http_response_code(500);
+                $this->renderJSON("Can't get the email of the user");
             }
         }
     }
@@ -64,9 +87,9 @@ class UserController extends BaseController
             //Check des valeurs reçues
             // if (filter_var($email, FILTER_VALIDATE_EMAIL) == TRUE) { array_push($errors, "Rentrez un email valide");
 
-            $userManager = new UserModel (new PDOFactory());
-            $userExist = $userManager->getUserExistCheck($email);
-
+            // Check if user exist
+            $userModel = new UserModel (new PDOFactory());
+            $userExist = $userModel->getUserExistCheck($email);
             if ($userExist)
             {
                 array_push($errors, "Adresse email déjà utilisée");
@@ -74,7 +97,7 @@ class UserController extends BaseController
 
             if (count($errors) == 0) {
                 $securedPassword = hash('sha256', $password);
-                $userManager = new UserModel(new PDOFactory());
+                $userModel = new UserModel(new PDOFactory());
                 $newUser = new User();
                 $newUser->setEmail($email);
                 $newUser->setPassword($securedPassword);
@@ -82,7 +105,7 @@ class UserController extends BaseController
                 $newUser->setNbCreation(0);
                 $newUser->setDateInscription(date('Y-m-d H:i:s'));
 
-                if ($userManager->addUser($newUser)) {
+                if ($userModel->addUser($newUser)) {
                     http_response_code(201);
                     $this->renderJSON("Votre compte a bien été créé. Veuillez vous connecter.");
                 }
