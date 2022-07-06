@@ -1,11 +1,11 @@
 import "./styles.css";
 
 // Composant qui contient un fichier svg , qu'on peut configurer
-export default function CloudOne (props) {
+export default function CloudOne(props) {
   return (
     <div>
       <svg
-        width={props.width} 
+        width={props.width}
         height={props.height}
         viewBox="0 0 357 150"
         fill="none"
