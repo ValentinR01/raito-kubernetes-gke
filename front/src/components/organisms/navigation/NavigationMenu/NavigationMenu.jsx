@@ -1,6 +1,6 @@
 import React from "react";
 import NavigationMenuStyle from "./NavigationMenu.style";
-import MeditationIcon from "assetsSVG-main/MeditationIcon";
+import MeditationIcon from "components/atoms/embedding/MeditationIcon/MeditationIcon";
 import ProfilIcone from "assetsSVG-main/ProfilIcone";
 import NavigationMenuLink from "components/molecules/navigation/NavigationMenuLink";
 import AmbianceIcon from "components/atoms/embedding/AmbianceIcon/AmbianceIcon";
