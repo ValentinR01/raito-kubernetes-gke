@@ -4,8 +4,6 @@ import ThemeProvider from "providers/ThemeProvider";
 import { Routes, Route } from "react-router-dom";
 import AppBackground from "components/molecules/embedding/AppBackground/AppBackground";
 
-import useGetCategoryList from "./Hook/useGetCategoryList";
-
 function App() {
   return (
     <ThemeProvider>
