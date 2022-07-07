@@ -18,4 +18,4 @@ const NavigationMenuLink = ({path, icon, title }) => {
   )
 }
 
-export default NavigationMenuLink
+export default NavigationMenuLink ;

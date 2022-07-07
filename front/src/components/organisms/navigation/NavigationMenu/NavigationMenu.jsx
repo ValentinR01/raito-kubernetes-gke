@@ -10,7 +10,7 @@ const NavigationMenu = () => {
   const navMenuData = {
     ambiances: {
       title: "Ambiances",
-      path: "/ambiance/",
+      path: "/ambiances/",
       icon: <AmbianceIcon />,
     },
     respiration: {
@@ -47,7 +47,7 @@ const NavigationMenu = () => {
       <NavigationMenuLink
         path={navMenuData.profil.path}
         icon={navMenuData.profil.icon}
-        title={navMenuData.ambiances.title}
+        title={navMenuData.profil.title}
       />
     </NavigationMenuStyle>
   );

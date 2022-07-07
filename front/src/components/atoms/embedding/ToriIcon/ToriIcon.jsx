@@ -15,7 +15,7 @@ const ToriIcon = ({ width, height, stroke, fill }) => {
         x2="45.9498"
         y2="19.2839"
         stroke={stroke}
-        stroke-width="11"
+        strokeWidth="11"
       />
       <line
         x1="144.95"
@@ -23,7 +23,7 @@ const ToriIcon = ({ width, height, stroke, fill }) => {
         x2="144.95"
         y2="19.2839"
         stroke={stroke}
-        stroke-width="11"
+        strokeWidth="11"
       />
       <line
         x1="174.75"
@@ -31,7 +31,7 @@ const ToriIcon = ({ width, height, stroke, fill }) => {
         x2="17.25"
         y2="37.5762"
         stroke={stroke}
-        stroke-width="11"
+        strokeWidth="11"
       />
       <line
         x1="98.0502"
@@ -39,18 +39,18 @@ const ToriIcon = ({ width, height, stroke, fill }) => {
         x2="98.0502"
         y2="36.9961"
         stroke={stroke}
-        stroke-width="5"
+        strokeWidth="5"
       />
       <path
         d="M151.35 13.8721L40.1996 13.8721"
         stroke={stroke}
-        stroke-width="11"
+        strokeWidth="11"
       />
       <path
         d="M150.45 13.872C173.13 13.872 180.3 8.95198 186 6M41.55 13.872C18.87 13.872 11.7 8.95198 6 6"
         stroke={stroke}
-        stroke-width="11"
-        stroke-linecap="round"
+        strokeWidth="11"
+        strokeLinecap="round"
       />
       <path d="M39.75 143.268H53.25V158.028H39.75V143.268Z" fill={fill} />
       <path d="M138.75 143.268H152.25V158.028H138.75V143.268Z" fill={fill} />

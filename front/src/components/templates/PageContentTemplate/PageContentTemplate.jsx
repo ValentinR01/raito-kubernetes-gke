@@ -3,7 +3,9 @@ import PageContentTemplateStyle from './PageContentTemplate.style'
 
 const PageContentTemplate = ({children}) => {
   return (
-    <PageContentTemplateStyle>{children}</PageContentTemplateStyle>
+    <PageContentTemplateStyle>
+      {children}
+    </PageContentTemplateStyle>
   )
 }
 

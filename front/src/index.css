@@ -11,3 +11,61 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.all-cards {
+  /* background-color: aqua; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+
+}
+
+.card-body {
+  /* background-color: #FAF5E2 ; */
+  background-color: #fffae6 ;
+
+  height: 290px;
+  width: 290px;
+  border-radius: 20px;
+  position: relative;
+  
+}
+.card-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 30px);
+
+  
+
+
+}
+
+.card-illustration svg {
+  padding: 13px;
+  background-color: #BCC4C6 ;
+  border-radius: 20px;
+}
+
+
+
+
+.text-and-icon {
+  /* background-color: blue; */
+  margin: 0 10px;
+  width: 85%;
+  height: 80px;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-left-radius:20px ;
+  border-bottom-right-radius:20px ;
+
+}
+
+
+
+
