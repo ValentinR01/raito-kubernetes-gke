@@ -1,5 +1,5 @@
 import { Label } from "components/atoms/forms";
-import { Stack, Text } from "components/atoms/grouping";
+import { Stack } from "components/atoms/grouping";
 import React from "react";
 import ColorFieldStyle from "./ColorField.style";
 
