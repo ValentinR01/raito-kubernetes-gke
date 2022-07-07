@@ -1,8 +1,10 @@
 import styled, { css } from "styled-components";
+import { themeColorLight } from 'style/vars/colors';
 
 const CardStyle = styled.section`
-  background-color: #f3edd7;
+  background-color: ${themeColorLight.lightCream};
   margin-left: 35px;
+  margin-top: 20px;
   margin-right: 35px;
   padding: 10px;
   border-radius: 10px;
