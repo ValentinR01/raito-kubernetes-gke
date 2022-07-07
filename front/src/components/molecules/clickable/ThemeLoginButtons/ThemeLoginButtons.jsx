@@ -1,17 +1,17 @@
-import React from 'react'
-import ThemeLoginStyle from './ThemeLoginStyle.style'
-import ThemeButton from 'components/atoms/forms/ThemeLoginButtons/ThemeButton'
-import Separator from 'components/atoms/forms/ThemeLoginButtons/Separator'
-import LoginButton from 'components/atoms/forms/ThemeLoginButtons/LoginButton'
+import React from "react";
+import ThemeButton from "components/atoms/forms/ThemeLoginButtons/ThemeButton";
+import Separator from "components/atoms/forms/ThemeLoginButtons/Separator";
+import LoginButton from "components/atoms/forms/ThemeLoginButtons/LoginButton";
+import ThemeLoginButtonsStyle from "./ThemeLoginButtons.style";
 
 const ThemeLoginButtons = () => {
-  return (    
-    <ThemeLoginStyle>
+  return (
+    <ThemeLoginButtonsStyle>
       <ThemeButton />
-      <Separator /> 
+      <Separator />
       <LoginButton />
-    </ThemeLoginStyle>
-  )
-}
+    </ThemeLoginButtonsStyle>
+  );
+};
 
-export default ThemeLoginButtons
+export default ThemeLoginButtons;
