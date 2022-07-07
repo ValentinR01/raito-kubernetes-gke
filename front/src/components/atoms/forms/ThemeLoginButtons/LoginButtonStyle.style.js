@@ -5,6 +5,7 @@ const LoginButtonStyle = styled.button`
     padding: 0.35em 1em;
     border: none;
     border-radius: 0 14px 14px 0;
+    display: inline;
         &:hover {
             background-color: #ce6060;
         }
