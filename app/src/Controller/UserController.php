@@ -128,16 +128,19 @@ class UserController extends BaseController
 
     public function isTokenValid(string $jwt)
     {
-        try{
+        try {
             $JWTDecode = JWT::decode($jwt, new Key($this->JWTKey, 'HS256'));
             $expiredDate = $JWTDecode->generateAt;
-            $dateNow = new \DateTime(); 
+            $dateNow = new \DateTime();
             $dateNow->setTimezone(new \DateTimeZone('Europe/Paris'));
 
-            
-        //$x = JWT::decode($jwt, new Key($this->JWTKey, 'HS256'));
-        //echo ($x->generateAt);
+
+            //$x = JWT::decode($jwt, new Key($this->JWTKey, 'HS256'));
+            //echo ($x->generateAt);
+        }
+        catch (\Exception $e) {
+            echo('$e');
+        }
+
     }
-
-
 }
