@@ -4,7 +4,7 @@ import ColorField from "components/molecules/forms/ColorField/ColorField";
 import PageTemplate from "components/templates/PageTemplate/PageTemplate";
 import React from "react";
 
-const ColorPickerPage = () => {
+const ColorPickerWidget = () => {
   return (
     <PageTemplate>
       <Card small>
@@ -15,4 +15,4 @@ const ColorPickerPage = () => {
   );
 };
 
-export default ColorPickerPage;
+export default ColorPickerWidget;
