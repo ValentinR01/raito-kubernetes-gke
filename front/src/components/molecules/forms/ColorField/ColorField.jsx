@@ -1,7 +1,7 @@
-import Label from "components/atoms/forms/Label/Label";
+import { Label } from "components/atoms/forms";
+import { Stack, Text } from "components/atoms/grouping";
 import React from "react";
 import ColorFieldStyle from "./ColorField.style";
-import Stack from "components/atoms/grouping/Stack/Stack";
 
 const ColorField = ({ label, onChange }) => {
   return (
