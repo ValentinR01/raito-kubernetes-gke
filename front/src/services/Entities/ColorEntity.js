@@ -7,6 +7,6 @@ export default class ColorEntity {
    * @return Axios Instance
    */
   static async postColor(data) {
-    return await axiosInstance.post(`/color`, data);
+    return await axiosInstance.post(`/api/color`, data);
   }
 }
