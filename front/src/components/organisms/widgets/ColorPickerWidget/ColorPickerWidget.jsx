@@ -1,6 +1,6 @@
 import Card from "components/atoms/grouping/Card/Card";
 import Heading from "components/atoms/text/Heading/Heading";
-import ColorField from "components/molecules/forms/ColorField/ColorField";
+import { ColorField } from "components/molecules/forms";
 import PageTemplate from "components/templates/PageTemplate/PageTemplate";
 import React from "react";
 import ColorEntity from "services/Entities/ColorEntity";
