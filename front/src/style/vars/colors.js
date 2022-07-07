@@ -28,6 +28,7 @@ const general = {
     grey: '#d3d3d3',
     egg: '#f0f0f0',
     cream: '#f3edd7',
+    lightCream: '#faf5e2',
     white: '#fff',
 
     // INFO STATE
