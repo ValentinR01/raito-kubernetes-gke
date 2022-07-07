@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Factory\PDOFactory;
 use App\Model\CategoryModel;
-use App\HTTP\HTTPRequest;
 
 class CategoryController extends BaseController
 {
@@ -14,15 +13,17 @@ class CategoryController extends BaseController
 
     public function executeIndex()
     {
-        $categoryModel = new CategoryModel(new PDOFactory());
-        $category = $categoryModel->getAllCategory();
-        $this->renderJSON($category);
+        if ($this->HTTPRequest->getMethod() === 'GET')
+        {
+            $categoryModel = new CategoryModel(new PDOFactory());
+            $category = $categoryModel->getAllCategory();
+            return $this->renderJSON($category);
+        }
     }
 
     public function executeTest()
     {
-        $response = new HTTPRequest();
-        $this->renderJSON($response->getHeader());
+        $this->renderJSON($this->HTTPRequest->getHeader());
     }
 
 /*

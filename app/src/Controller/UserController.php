@@ -7,7 +7,6 @@ use \Firebase\JWT\JWT;
 
 use App\Entity\User;
 use App\Factory\PDOFactory;
-use App\HTTP\HTTPRequest;
 use App\Model\UserModel;
 use Firebase\JWT\Key;
 
@@ -20,8 +19,7 @@ class UserController extends BaseController
      */
     public function executeLogin()
     {
-        $response = new HTTPRequest();
-        $response = $response->getBasicAuthentification();
+        $response = $this->HTTPRequest->getBasicAuthentification();
         if (is_string($response)) {
             echo($response);
         }
@@ -62,9 +60,8 @@ class UserController extends BaseController
      */
     public function executeAddUser()
     {
-        $ex = $this->GenerateJWT('v@gmail.com');
-        $response = new HTTPRequest();
-        $response = $response->getBasicAuthentification();
+        $ex = $this->generateJWT('v@gmail.com');
+        $response = $this->HTTPRequest->getBasicAuthentification();
         if (is_string($response)) {
             echo($response);
         }
@@ -113,7 +110,7 @@ class UserController extends BaseController
 
     }
 
-    private function GenerateJWT(string $email)
+    private function generateJWT(string $email)
     {
         $generatedDate = new \DateTime(); 
         $generatedDate->setTimezone(new \DateTimeZone('Europe/Paris'));
@@ -123,10 +120,23 @@ class UserController extends BaseController
             'generateAt' =>  date_timestamp_get($generatedDate),
             'expiredAt' => strtotime('+7 day', date_timestamp_get($generatedDate))
         ];
-
         $jwt = JWT::encode($payload, $this->JWTKey, 'HS256');
         //$decoded = JWT::decode($jwt, new Key($this->JWTKey, 'HS256'));
-        $this->renderJSON($jwt);
+        $this->isTokenValid($jwt);
+        //$this->renderJSON($jwt);
+    }
+
+    public function isTokenValid(string $jwt)
+    {
+        try{
+            $JWTDecode = JWT::decode($jwt, new Key($this->JWTKey, 'HS256'));
+            $expiredDate = $JWTDecode->generateAt;
+            $dateNow = new \DateTime(); 
+            $dateNow->setTimezone(new \DateTimeZone('Europe/Paris'));
+
+            
+        //$x = JWT::decode($jwt, new Key($this->JWTKey, 'HS256'));
+        //echo ($x->generateAt);
     }
 
 

@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\HTTP\HTTPRequest;
 
 class ColorController extends BaseController
 {
@@ -11,8 +10,7 @@ class ColorController extends BaseController
      */
     public function executeColor()
     {
-        $response = new HTTPRequest();
-        $response = $response->getBody();
+        $response = $this->HTTPRequest->getBody();
         if (is_string($response)) {
             $this->renderJSON($response);
         } else {

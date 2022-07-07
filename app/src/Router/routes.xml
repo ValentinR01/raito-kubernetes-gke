@@ -12,4 +12,5 @@
     <!-- Content -->
     <route path="exercice" action="ExerciceList" controller="ContentController"/>
     <route path="ambiance" action="AmbianceList" controller="ContentController"/>
+    <route path="ambiance/1" action="Test" controller="CategoryController"/>
 </routes>
