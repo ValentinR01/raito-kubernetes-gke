@@ -21,7 +21,7 @@ Text.propTypes = {
   children: PropTypes.string,
   className: PropTypes.string,
   size: PropTypes.oneOf(["small", "medium", "large", "xlarge"]),
-  color: PropTypes.oneOf(["cream", "terra", "primary", "secondary"]),
+  color: PropTypes.oneOf(["cream", "terra", "primary", "secondary", "error"]),
 };
 
 Text.defaultProps = {
