@@ -5,7 +5,7 @@ import IconEmptyHeart from "components/atoms/embedding/IconEmptyHeart/IconEmptyH
 import Waves from "components/atoms/embedding/Waves/Waves";
 
 
-export const AmbiancesList = [
+export const ambiancesList = [
     {
         "id": 1,
         "title": "Birds",
