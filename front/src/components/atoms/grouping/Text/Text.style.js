@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 
 const TextStyle = styled.p`
+    text-align: left;
     color: ${({ theme, $color }) => theme.colors[$color]};
     ${({ $size }) => {
         let fontSize;
@@ -15,7 +16,7 @@ const TextStyle = styled.p`
                 fontSize = 48;
                 break;
             default:
-                fontSize = 24;
+                fontSize = 16;
                 break;
         }
         return css`
