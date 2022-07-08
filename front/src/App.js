@@ -6,15 +6,8 @@ import AppBackground from "components/molecules/embedding/AppBackground/AppBackg
 import PageTemplate from "components/templates/PageTemplate/PageTemplate";
 import Ambiances from "components/pages/Ambiances/Ambiances";
 import AmbianceSinglePage from "components/pages/AmbianceSinglePage/AmbianceSinglePage";
-import Step2 from "components/pages/Step2/Step2";
-
-
-
-
-
-
-
-
+import Step2 from "components/pages/Step2/Step2" ;
+import HomePage from "components/pages/HomePage";
 
 function App() {
   return (
@@ -22,22 +15,13 @@ function App() {
       <div className="App">
         <PageTemplate>
         <Routes>
-          <Route path="/" element={<div />} />
+          <Route path="/" element={< HomePage />} />
           <Route path="/respiration/" element={<div />} />
-          {/* <Route path="/ambiances/" element={<Ambiances />} /> */}
           <Route path="/profil" element={<div />} />
-
-
-
-            {/* <Route path="/ambiances"  element={<Ambiances />} />
-              <Route path="/users" element={<Profil />}>
-                <Route path=":userId" element={<UserPage />} />
-              </Route> */}
-
-              <Route path="/ambiances"  element={<Ambiances />} />
-              <Route path="/step2" element={<Step2 />}>
-                <Route path=":ambianceId" element={<AmbianceSinglePage />} />
-              </Route>
+          <Route path="/ambiances"  element={<Ambiances />} />
+          <Route path="/step2" element={<Step2 />}>
+            <Route path=":ambianceId" element={<AmbianceSinglePage />} />
+          </Route>
         </Routes>
         </PageTemplate>
         
@@ -45,7 +29,8 @@ function App() {
         <AppBackground />
       </div>
     </ThemeProvider>
+
   );
 }
 
-export default App;
+export default App ;

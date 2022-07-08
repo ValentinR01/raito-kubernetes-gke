@@ -6,7 +6,7 @@ const HeadingStyle = styled.p`
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
   padding-left: 20px;
 
   ${({ $level, $upperCase }) => {

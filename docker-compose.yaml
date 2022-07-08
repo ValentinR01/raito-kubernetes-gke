@@ -1,6 +1,15 @@
 version: "3.9"
    
 services:
+  php:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - '2345:80'
+        volumes:
+            - ./app/src:/var/www/html
+
   db:
     image: 'mariadb'
     restart: always
@@ -8,14 +17,13 @@ services:
         - .env
     volumes:
         - ./dumpSql/data.sql:/docker-entrypoint-initdb.d/data.sql
-  web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - ./src:/code
-    ports:
-      - "8000:8000"
-    environment:
-      - .env
-    depends_on:
-      - db
+
+  phpmyadmin:
+        image: phpmyadmin
+        restart: always
+        ports:
+            - '8080:80'
+        environment:
+            - PMA_ARBITRARY=1
+        depends_on:
+            - db

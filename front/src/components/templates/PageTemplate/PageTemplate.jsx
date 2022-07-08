@@ -9,7 +9,7 @@ const PageTemplate = ({ children }) => {
     <PageTemplateStyle>
       <SideBar />
       <ThemeLoginButtons/>
-      <div className="PageTemplate">
+      <div className="page-template">
       <PageContentTemplate >
         {children}
       </PageContentTemplate>      
