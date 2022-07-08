@@ -112,6 +112,14 @@ class UserController extends BaseController
             }
         }
     }
+
+    public function executeUserInfo()
+    {
+        if ($this->HTTPRequest->isMethodAllowed('GET')) {
+            
+            
+        }
+    }
     
 
     private function generateJWT(string $email)
