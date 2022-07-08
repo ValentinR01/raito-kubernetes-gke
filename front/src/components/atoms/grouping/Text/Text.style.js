@@ -18,7 +18,7 @@ const TextStyle = styled.p`
         fontSize = 48;
         break;
       default:
-        fontSize = 24;
+        fontSize = 16;
         break;
     }
     return css`
