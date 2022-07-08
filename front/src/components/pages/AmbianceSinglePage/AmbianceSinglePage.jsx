@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { Fragment, useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router';
 import { ambiancesList } from '../Ambiances/DataAmbiances';
 import { songsdata } from '../Ambiances/Player/audio';
@@ -41,37 +41,41 @@ const AmbianceSinglePage = () => {
       } 
   })
     return (
-      <div>
+    
         
-            <div className="container" >
+        <div className="container-single-ambiance" >
                 <div className="mini-illu"  > 
                     <div className="color-area">   </div>
                    
-                   <div className="content">  
-                      <p>{theSong.title} </p>
-                      <p>Auteur : {theSong.author} </p>
-
+                   <div className="content"> 
+                      <div>
+                        <h3>{theSong.title} </h3>
+                        <p> <strong>Auteur :</strong>   {theSong.author} </p>
+                      </div>
                    </div>
                  
                 </div>
-                <div className="description" >  
-                         Qu'est-ce que c'est ?
-                         <p>{theSong.description} </p>
+                <div className="description" > 
+                        <div> 
+                          <h4> Qu'est-ce que c'est ?  </h4>
+                          <p>{theSong.description} </p>  
+                        </div> 
+                        
                 </div>
                 <div className="play-area" >
                     
                           
 
                     <div className="play-illustration"> {theSong.illustration} </div>
-                    <div>
+                    <div className="play-zone">
                           <audio src={currentSong.url} ref={audioElem} onTimeUpdate={onPlaying} />
                           <Player songs={songs} setSongs={setSongs} isplaying={isplaying} setisplaying={setisplaying} audioElem={audioElem} currentSong={currentSong} setCurrentSong={setCurrentSong} />
                     </div>
                 <div>
               </div>
-          </div>
-            </div>
+              </div>
       </div>
+    
     );
   }
 

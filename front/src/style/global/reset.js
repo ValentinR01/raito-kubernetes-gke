@@ -9,21 +9,21 @@ const ResetStyle = createGlobalStyle`
 }
 
 /* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-    margin: 0;
-}
+// body,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// p,
+// li,
+// figure,
+// figcaption,
+// blockquote,
+// dl,
+// dd {
+//     margin: 0;
+// }
 
 /* Set core body defaults */
 body {

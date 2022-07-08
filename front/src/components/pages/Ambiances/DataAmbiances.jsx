@@ -13,7 +13,7 @@ export const ambiancesList = [
         "illustration": <Birds  fill="#FAF5E2" width={170} height={170} ></Birds>,
         "icon":<IconEmptyHeart  fill="#A44D4D" width={27} height={27} />,
         "author":"Team Raito",
-        "description": "Description birds"
+        "description": "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."
     },
     {
         
@@ -23,7 +23,7 @@ export const ambiancesList = [
         "illustration": <Fire fill="#FAF5E2" width={170} height={170} ></Fire>,
         "icon":<IconEmptyHeart  fill="#A44D4D" width={27} height={27} />,
         "author":"Team Raito",
-        "description": "Description Fire"
+        "description": "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."
           
     },
     {
@@ -33,7 +33,7 @@ export const ambiancesList = [
         "illustration": <Waves fill="#FAF5E2" width={170} height={170}></Waves>,
         "icon":<IconEmptyHeart  fill="#A44D4D" width={27} height={27} />,
         "author":"Team Raito",
-        "description": "Description Water"
+        "description": "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."
     },
     {
         
@@ -43,7 +43,7 @@ export const ambiancesList = [
         "illustration":<Forest  fill="#FAF5E2" width={170} height={170} ></Forest>,
         "icon":<IconEmptyHeart  fill="#A44D4D" width={27} height={27} />,
         "author":"Team Raito",
-        "description": "Description Forest"
+        "description": "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."
     },
 
 ]

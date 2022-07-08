@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Outlet } from 'react-router';
 
 const Step2 = () => {
   
   return (
-    <div> 
+    <Fragment> 
       <Outlet ></Outlet>
-
-    </div>
+    </Fragment>
   )
 }
 

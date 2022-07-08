@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import './player.css';
-import {BsFillPlayCircleFill, BsFillPauseCircleFill, BsFillSkipStartCircleFill, BsFillSkipEndCircleFill} from 'react-icons/bs';
+// import {BsFillPlayCircleFill, BsFillPauseCircleFill, BsFillSkipStartCircleFill, BsFillSkipEndCircleFill} from 'react-icons/bs';
+import {BsFillPlayCircleFill, BsFillPauseCircleFill} from 'react-icons/bs';
 
 const Player = ({audioElem, isplaying, setisplaying, currentSong, setCurrentSong, songs})=> {
 
@@ -23,42 +24,11 @@ const Player = ({audioElem, isplaying, setisplaying, currentSong, setCurrentSong
 
   }
 
-  const skipBack = ()=>
-  {
-    const index = songs.findIndex(x=>x.title === currentSong.title);
-    if (index === 0)
-    {
-      setCurrentSong(songs[songs.length - 1])
-    }
-    else
-    {
-      setCurrentSong(songs[index - 1])
-    }
-    audioElem.current.currentTime = 0;
-    
-  }
-
-
-  const skiptoNext = ()=>
-  {
-    const index = songs.findIndex(x=>x.title === currentSong.title);
-
-    if (index === songs.length-1)
-    {
-      setCurrentSong(songs[0])
-    }
-    else
-    {
-      setCurrentSong(songs[index + 1])
-    }
-    audioElem.current.currentTime = 0;
-    
-  }
 
   return (
     <div className='player_container'>
       <div className="title">
-        <p>{currentSong.title}</p>
+        <strong>{currentSong.title}</strong>
       </div>
       <div className="navigation">
         <div className="navigation_wrapper" onClick={checkWidth} ref={clickRef}>
@@ -66,9 +36,9 @@ const Player = ({audioElem, isplaying, setisplaying, currentSong, setCurrentSong
         </div>
       </div>
       <div className="controls">
-        <BsFillSkipStartCircleFill className='btn_action' onClick={skipBack}/>
+        {/* <BsFillSkipStartCircleFill className='btn_action' onClick={skipBack}/> */}
         {isplaying ? <BsFillPauseCircleFill className='btn_action pp' onClick={PlayPause}/> : <BsFillPlayCircleFill className='btn_action pp' onClick={PlayPause}/>}
-        <BsFillSkipEndCircleFill className='btn_action' onClick={skiptoNext}/>        
+        {/* <BsFillSkipEndCircleFill className='btn_action' onClick={skiptoNext}/>         */}
       </div>
     </div>
   

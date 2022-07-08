@@ -5,15 +5,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* background-color: black; */
+    background-color: transparent ;
 }
-.player_container >*
+.player_container > *
     {
-        color: rgb(202, 202, 202);
+        color: #A44D4D
     }
 
-    .title{
+    .title {
         font-size: inherit;
+        /* background-color: rgb(237, 233, 189); */
     }
     .navigation{
         width: 100%;
@@ -21,15 +22,15 @@
     }
     .navigation_wrapper
     {
-        min-width: 100%;
         background-color: rgba(119, 119, 119, 0.781);
-        height: 5px;
+        height: 12px;
         border-radius: 30px;
         cursor: pointer;
+        margin: 20px 10px;
     } 
 
     .seek_bar {
-        width: 0;
+        width: 2px;
         height: 100%;
         background-color: rgb(24, 128, 3);
         border-radius: 30px;
@@ -48,7 +49,7 @@
     }
 
     .btn_action:hover{
-    color: white;
+    color: rgba(206, 204, 204, 0.781);
         
 
     }
