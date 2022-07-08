@@ -47,12 +47,18 @@ const LoginForm = () => {
   };
 
   const register = async () => {
+    const encodedData = btoa(`${data.email}:${data.password}`);
+    const headers = new Headers({
+      Authorization: `Basic ${encodedData}`,
+      //   "Content-Type": "application/x-www-form-urlencoded",
+    });
+    console.log(headers);
     try {
       const response = await fetch("http://localhost:2345/register", {
         method: "POST",
-        body: JSON.stringify(data),
         mode: "cors",
         credentials: "include",
+        headers: headers,
       });
       if (response.status >= 200 && response.status <= 299) {
         const data = await response.json();
@@ -88,9 +94,11 @@ const LoginForm = () => {
       <ErrorText error={errors} />
       <Stack>
         <BasicButtonStyle primary onClick={() => login()}>
-          Se Connecter{" "}
+          Se Connecter
         </BasicButtonStyle>
-        <InscriptionButton onClick={register} />
+        <BasicButtonStyle primary onClick={() => register()}>
+          S'inscrire
+        </BasicButtonStyle>
       </Stack>
     </div>
   );
