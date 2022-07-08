@@ -1,6 +1,7 @@
 <?php
 namespace APP\HTTP;
 
+use Exception;
 use Firebase\JWT\Key;
 use \Firebase\JWT\JWT;
 
@@ -23,20 +24,24 @@ class HTTPRequest
         return $_SERVER['REQUEST_URI'];
     }
     
-    public function getBody()
+    public function getColor()
     {
-        if (!isset ($_POST)) {
-            http_response_code(404);
-            return ("Fields 'colorHexadecimal' do not exist");
+        try {
+            $color = json_decode(file_get_contents('php://input'));
+            error_reporting(E_ALL ^ E_WARNING);
+            $colorValue = $color->colorHexadecimal;
+            if (!isset ($colorValue)) {
+                http_response_code(404);
+                return ("Fields 'colorHexadecimal' do not exist");
+            } elseif (empty($colorValue)) {
+                http_response_code(400);
+                return ("'colorHexadecimal' is empty");
+            } else {
+                return $colorValue;
+            }
+        } catch (Exception $e) {
+            return ('Exception received : '.  $e->getMessage(). "\n");
         }
-        elseif (empty($_POST)) {
-            http_response_code(400);
-            echo (file_get_contents('php://input'));
-            $x = json_decode(file_get_contents('php://input'));
-            echo $x->colorHexadecimal;
-            return("'colorHexadecimal' is empty");
-        }
-        else return $_POST;
     }
 
     public function getHeader(){
@@ -124,26 +129,4 @@ class HTTPRequest
         );
 
     }
-
-    public function getColor()
-    {
-        // echo json_encode($_SERVER, JSON_PRETTY_PRINT);
-        if (!isset ($_SERVER['PHP_AUTH_COLOR'])) 
-        {
-            http_response_code(404);
-            return ('Fields color does not exist');
-        } 
-        elseif (empty($_SERVER['PHP_AUTH_COLOR'])) 
-        {
-            http_response_code(400);
-            return('Color is empty');
-        } 
-        else 
-        return array(
-            "colorHexadecimal" => $_SERVER['PHP_AUTH_COLOR'],
-        );
-    }
-
-
-
 }
