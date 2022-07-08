@@ -6,6 +6,3 @@ const LoginFormStyle = styled.div`
 `;
 
 export default LoginFormStyle;
-
-// margin-right: auto;
-// margin-left: auto;

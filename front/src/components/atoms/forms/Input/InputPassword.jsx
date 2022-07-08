@@ -3,7 +3,7 @@ import InputPasswordStyle from './InputPasswordStyle.style'
 
 const InputPassword = () => {
     return (    
-        <InputPasswordStyle />
+        <InputPasswordStyle type="password" name="password"/>
     )
   }
   

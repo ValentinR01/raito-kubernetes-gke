@@ -14,4 +14,3 @@ const InputEmailStyle = styled.input.attrs({
 `;
 
 export default InputEmailStyle;
-//  padding: 0.35em 1em;
