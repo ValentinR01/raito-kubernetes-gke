@@ -5,5 +5,4 @@ const CloseButtonModalStyle = styled.button`
     background: transparent;
     margin-left: 550px;
 `;
-// transform: 'translate(-50%, -50%);
 export default CloseButtonModalStyle;
