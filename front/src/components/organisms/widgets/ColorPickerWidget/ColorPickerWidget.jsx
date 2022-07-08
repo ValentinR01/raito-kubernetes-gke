@@ -31,11 +31,15 @@ const ColorPickerWidget = () => {
       const data = {
         colorHexadecimal: color,
       };
+      const headers = new Headers({
+        "Content-Type": "application/x-www-form-urlencoded",
+      });
       const response = await fetch("http://localhost:2345/color", {
         method: "POST",
         body: JSON.stringify(data),
         mode: "cors",
         credentials: "include",
+        headers: headers,
       });
       if (response.status >= 200 && response.status <= 299) {
         const data = await response.json();
