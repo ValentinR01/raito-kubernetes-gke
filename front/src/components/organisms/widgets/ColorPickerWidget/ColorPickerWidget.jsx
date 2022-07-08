@@ -8,7 +8,7 @@ const ColorPickerWidget = () => {
   const [errors, setErrors] = useState(null);
   const [color, setColor] = useState(null);
 
-  const fetchData = async () => {
+  const postColor = async () => {
     try {
       const data = {
         colorHexadecimal: color,
@@ -36,7 +36,7 @@ const ColorPickerWidget = () => {
     if (!color) {
       return;
     }
-    fetchData();
+    postColor();
   }, [color]);
 
   return (
