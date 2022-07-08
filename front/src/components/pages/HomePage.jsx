@@ -21,7 +21,7 @@ const HomePage = () => {
           journée que sont le réveil et l’endormissement, ainsi que dans les
           moments où vous souhaitez lâcher prise et vous détendre.
         </Text>
-        <ColorPickerWidget />
+        {/* <ColorPickerWidget /> */}
       </Card>
     </PageTemplate>
   );
