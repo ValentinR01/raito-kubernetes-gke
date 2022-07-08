@@ -20,7 +20,7 @@ const Text = ({ className, children, color, size }) => {
 Text.propTypes = {
   children: PropTypes.string,
   className: PropTypes.string,
-  size: PropTypes.oneOf(["small", "medium", "large", "xlarge"]),
+  size: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge"]),
   color: PropTypes.oneOf(["cream", "terra", "primary", "secondary", "error"]),
 };
 
