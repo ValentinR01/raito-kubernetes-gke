@@ -11,7 +11,7 @@ class ColorController extends BaseController
     public function executeColor()
     {
         if ($this->HTTPRequest->isMethodAllowed('POST')) {
-            $response = $this->HTTPRequest->getBody();
+            $response = $this->HTTPRequest->getColor();
             if (is_string($response)) {
                 $this->renderJSON($response);
             } else {
