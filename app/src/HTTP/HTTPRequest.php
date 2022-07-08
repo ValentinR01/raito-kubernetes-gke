@@ -31,6 +31,9 @@ class HTTPRequest
         }
         elseif (empty($_POST)) {
             http_response_code(400);
+            echo (file_get_contents('php://input'));
+            $x = json_decode(file_get_contents('php://input'));
+            echo $x->colorHexadecimal;
             return("'colorHexadecimal' is empty");
         }
         else return $_POST;
