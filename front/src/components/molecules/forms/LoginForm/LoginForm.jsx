@@ -14,7 +14,6 @@ const LoginForm = () => {
         <InputPassword />
         <ConnexionButton />
         <InscriptionButton />
-
     </div>
     
     )
