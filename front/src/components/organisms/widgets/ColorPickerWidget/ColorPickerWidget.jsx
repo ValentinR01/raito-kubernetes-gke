@@ -1,8 +1,7 @@
-import Card from "components/atoms/grouping/Card/Card";
-import Heading from "components/atoms/text/Heading/Heading";
+import { Heading } from "components/atoms/text";
 import { ColorField } from "components/molecules/forms";
-import PageTemplate from "components/templates/PageTemplate/PageTemplate";
 import React, { useEffect, useState } from "react";
+import ColorPickerWidgetStyle from "./ColorPickerWidget.style";
 
 const ColorPickerWidget = () => {
   const [errors, setErrors] = useState(null);
@@ -40,17 +39,15 @@ const ColorPickerWidget = () => {
   }, [color]);
 
   return (
-    <PageTemplate>
-      <Card small>
-        <Heading level="h1">Color Picker</Heading>
-        <ColorField
-          label="Choisissez la couleur de la lumière"
-          color={color}
-          setColor={setColor}
-          error={errors}
-        />
-      </Card>
-    </PageTemplate>
+    <ColorPickerWidgetStyle>
+      <Heading level="h1">Color Picker</Heading>
+      <ColorField
+        label="Choisissez la couleur de la lumière"
+        color={color}
+        setColor={setColor}
+        error={errors}
+      />
+    </ColorPickerWidgetStyle>
   );
 };
 
