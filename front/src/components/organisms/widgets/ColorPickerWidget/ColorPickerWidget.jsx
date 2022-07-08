@@ -15,7 +15,7 @@ const ColorPickerWidget = () => {
   const postColor = async () => {
     try {
       const data = {
-        colorHexadecimal: color,
+        'colorHexadecimal' : color,
       };
       const response = await ColorEntity.postColor(data);
       console.log(response.data);
