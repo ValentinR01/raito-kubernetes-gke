@@ -55,7 +55,6 @@ const ToriIcon = ({ width, height, stroke, fill }) => {
       <path d="M39.75 143.268H53.25V158.028H39.75V143.268Z" fill={fill} />
       <path d="M138.75 143.268H152.25V158.028H138.75V143.268Z" fill={fill} />
     </svg>
-   
   );
 };
 
