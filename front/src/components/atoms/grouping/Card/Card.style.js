@@ -3,10 +3,14 @@ import { themeColorLight } from 'style/vars/colors';
 
 const CardStyle = styled.section`
   background-color: ${themeColorLight.lightCream};
-  margin-left: 35px;
+  margin-left: 20px;
   margin-top: 20px;
-  margin-right: 35px;
-  padding: 10px;
+  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  
   border-radius: 10px;
   text-align: center;
 
@@ -24,3 +28,4 @@ const CardStyle = styled.section`
 `;
 
 export default CardStyle;
+// padding: 10px;

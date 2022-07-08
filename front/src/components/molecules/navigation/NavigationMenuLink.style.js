@@ -4,7 +4,8 @@ const NavigationMenuLinkStyle = styled.li`
 color : #F3EDD7;
 list-style: none;
 text-transform: uppercase;
-cursor: pointer;  
+cursor: pointer;
+margin-bottom: 30px;  
 `;
 
 export default NavigationMenuLinkStyle;
