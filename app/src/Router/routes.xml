@@ -9,6 +9,7 @@
     <route path="login" action="Login" controller="UserController"/>
     <route path="color" action="Color" controller="ColorController"/>
     <route path="user" action="UserInfo" controller="UserController"/>
+    <route path="refreshtoken" action="RefreshToken" controller="UserController"/>
 
     <!-- Content -->
     <route path="exercice" action="ExerciceList" controller="ExerciceController"/>

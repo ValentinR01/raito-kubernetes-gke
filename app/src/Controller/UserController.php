@@ -149,4 +149,11 @@ class UserController extends BaseController
         return $jwt;
     }
 
+    public function executeRefreshToken(){
+        $jwt = $this->HTTPRequest->getJWTDetailled();
+        $email = $jwt->email;
+        $newJWT = $this->generateJWT($email);
+        return json_encode($newJWT);
+    }
+
 }
