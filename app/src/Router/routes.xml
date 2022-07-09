@@ -11,7 +11,7 @@
     <route path="user" action="UserInfo" controller="UserController"/>
 
     <!-- Content -->
-    <route path="exercice" action="ExerciceList" controller="ContentController"/>
-    <route path="ambiance" action="AmbianceList" controller="ContentController"/>
+    <route path="exercice" action="ExerciceList" controller="ExerciceController"/>
+    <route path="ambiance" action="AmbianceList" controller="AmbianceController"/>
     <route path="ambiance/1" action="Test" controller="CategoryController"/>
 </routes>
