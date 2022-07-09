@@ -1,11 +1,9 @@
-import PageContentTemplate from "components/templates/PageContentTemplate/PageContentTemplate";
 import React from "react";
-
-import AmbiancesStyle from "./Ambiances.style";
 import { ambiancesList } from "./DataAmbiances";
 import { useNavigate } from "react-router";
 import { Card } from "components/atoms/grouping";
 import { Heading } from "components/atoms/text";
+import { PageTemplate } from "components/templates";
 
 const Ambiances = () => {
   const navigate = useNavigate();
@@ -33,12 +31,12 @@ const Ambiances = () => {
   });
 
   return (
-    <PageContentTemplate>
+    <PageTemplate>
       <Card>
         <Heading>Ambiances</Heading>
-        {/* <div className="all-cards">{ShowAllAmbianceData}</div> */}
+        <div className="all-cards">{ShowAllAmbianceData}</div>
       </Card>
-    </PageContentTemplate>
+    </PageTemplate>
   );
 };
 
