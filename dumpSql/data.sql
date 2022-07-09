@@ -52,7 +52,7 @@ CREATE TABLE `ambiance` (
 --
 -- Dumping data for table `ambiance`
 --
-
+SET NAMES utf8;
 INSERT INTO `ambiance` VALUES
 (1,'Oiseau',2,1,6.4,'https://raitohetic.s3.eu-west-3.amazonaws.com/Birds.wav','https://raitohetic.s3.eu-west-3.amazonaws.com/Component_10.svg',"Détendez-vous au doux son des oiseaux de cette forêt verdoyante. Relaxant et rafraichissant, laissez-vous porter... ",1),
 (2,'Feu',4,1,0.4,'https://raitohetic.s3.eu-west-3.amazonaws.com/FIREBurn.wav','https://raitohetic.s3.eu-west-3.amazonaws.com/Component_1.svg',"Crépitez au son de la flamme. Apaisez vous avec ce doux son rappelant le chocolat chaud et l'hiver ...",1),
