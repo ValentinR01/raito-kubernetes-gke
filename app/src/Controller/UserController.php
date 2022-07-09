@@ -9,6 +9,7 @@ use App\Entity\User;
 use App\Factory\PDOFactory;
 use APP\HTTP\HTTPRequest as HTTPHTTPRequest;
 use App\Model\UserModel;
+use App\Model\UserRoleModel;
 use Firebase\JWT\Key;
 use \Firebase\JWT\JWT;
 
@@ -115,9 +116,21 @@ class UserController extends BaseController
 
     public function executeUserInfo()
     {
-        if ($this->HTTPRequest->isMethodAllowed('GET')) {
+        if ($this->HTTPRequest->isMethodAllowed('GET')  && $this->HTTPRequest->isUserAllowed()) {
+            $tokenInfo = $this->HTTPRequest->getJWTDetailled();
+
+            $userModel = new UserModel (new PDOFactory());
+            $userRoleModel = new UserRoleModel (new PDOFactory());
+            $user = $userModel->getUserByEmail($tokenInfo->email);
+            $userRole = $userRoleModel->getRoleName($user->getIdRole());
+
+            $userInfo = array (
+                'email' => $user->getEmail(),
+                'date_inscription' => $user->getDateInscription(),
+                'role' => $userRole->getName()
+            );
             
-            
+            echo json_encode($userInfo);
         }
     }
     
