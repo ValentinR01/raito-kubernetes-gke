@@ -7,10 +7,8 @@ require_once('vendor/autoload.php');
 
 use App\Entity\User;
 use App\Factory\PDOFactory;
-use APP\HTTP\HTTPRequest as HTTPHTTPRequest;
 use App\Model\UserModel;
 use App\Model\UserRoleModel;
-use Firebase\JWT\Key;
 use \Firebase\JWT\JWT;
 
 
