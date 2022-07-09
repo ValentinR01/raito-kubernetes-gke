@@ -97,8 +97,16 @@ class HTTPRequest
         }
         else return true;
     }
-    
 
+    public function getJWT(){
+        $jwt = $_SERVER['HTTP_AUTHORIZATION'];
+        if ($this->isTokenValid($jwt)) {
+            
+
+        }
+
+    }
+    
 
     public function getBasicAuthentification()
     {
