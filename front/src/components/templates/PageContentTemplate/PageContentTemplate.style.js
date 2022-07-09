@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const PageContentTemplateStyle = styled.div`
 width: 70vw;
