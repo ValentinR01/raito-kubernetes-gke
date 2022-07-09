@@ -153,7 +153,10 @@ class UserController extends BaseController
         $jwt = $this->HTTPRequest->getJWTDetailled();
         $email = $jwt->email;
         $newJWT = $this->generateJWT($email);
-        return json_encode($newJWT);
+        echo json_encode(array (
+            "message" => "Your token has been successfully refreshed",
+            "JWT" => $newJWT
+        ));
     }
 
 }
