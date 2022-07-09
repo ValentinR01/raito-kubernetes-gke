@@ -128,7 +128,7 @@ class UserController extends BaseController
                 'role' => $userRole->getName()
             );
 
-            return json_encode($userInfo);
+            echo json_encode($userInfo);
         }
     }
     
