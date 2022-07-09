@@ -20,7 +20,7 @@ const Ambiances = () => {
       >
         <div className="card-illustration">{element.illustration}</div>
         <div className="text-and-icon">
-          <div class="card-text-area">
+          <div className="card-text-area">
             <h5 className="card-title">{element.title}</h5>
             <p className="card-text">{element.author}</p>
           </div>
