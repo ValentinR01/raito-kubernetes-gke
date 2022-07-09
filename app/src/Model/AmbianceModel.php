@@ -12,7 +12,7 @@ class AmbianceModel extends BaseModel
     public function getAllAmbiance(): array
     {
         $query = $this->pdo->query('
-        SELECT * FROM '  . PDOFactory::DATABASE . '.ambiance');
+        SELECT * FROM '  . PDOFactory::DATABASE . '.ambiance WHERE status = 1');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
