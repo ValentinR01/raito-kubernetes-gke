@@ -8,11 +8,6 @@ use PDO;
 
 class ContentModel extends BaseModel
 {
-    public function getAllExercice(): array
-    {
-        $query = $this->pdo->query('SELECT * FROM '  . PDOFactory::DATABASE . '.content' . ' WHERE id_type = 1');
-        return $query->fetchAll(PDO::FETCH_ASSOC);
-    }
 
     public function getAllAmbiance(): array
     {
@@ -20,7 +15,7 @@ class ContentModel extends BaseModel
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getExerciceById(int $id): array
+    public function getAmbianceById(int $id): array
     {
         $query = $this->pdo->prepare('SELECT * FROM ' . PDOFactory::DATABASE . '.content' . ' ' . 'WHERE id = :id');
         $query->bindvalue(':id', $id, \PDO::PARAM_INT);

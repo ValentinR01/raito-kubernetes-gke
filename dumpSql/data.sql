@@ -45,7 +45,7 @@ CREATE TABLE `ambiance` (
   `music_url` varchar(200) NOT NULL,
   `image_url` varchar(200) NOT NULL,
   `description` text NOT NULL,
-  `author` int(4) NOT NULL,
+  `author_id` int(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
@@ -76,13 +76,13 @@ CREATE TABLE `exercice` (
   `rise_duration` decimal(2,1) DEFAULT NULL,
   `fall_duration` decimal(2,1) DEFAULT NULL,
   `high_intensity` decimal(2,1) DEFAULT NULL,
-  `low_intencity` decimal(2,1) DEFAULT NULL,
+  `low_intensity` decimal(2,1) DEFAULT NULL,
   `color` varchar(10) NOT NULL,
   `url_music` varchar(200) NOT NULL,
   `url_image` varchar(200) NOT NULL,
-  `note` decimal(3,1) DEFAULT NULL,
-  `nb_note` int(5) DEFAULT NULL,
-  `id_user` int(5) NOT NULL,
+  `rating` decimal(3,1) DEFAULT NULL,
+  `nb_rating` int(5) DEFAULT NULL,
+  `author_id` int(5) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
