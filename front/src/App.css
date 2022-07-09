@@ -1,16 +1,13 @@
-
 :root {
-  background-color: #F3EDD7;
-  margin: 0 ;
+  background-color: #f3edd7;
+  margin: 0;
 }
-
 
 .App {
   /* height: 100vh; */
-  display: flex ;
+  display: flex;
   flex-direction: row;
 }
-
 
 body {
   margin: 0;
@@ -29,12 +26,12 @@ code {
 .all-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 105px 17px;;
-
+  grid-gap: 105px 17px;
 }
 
 .card-body {
-  background-color: #fffae6 ;
+  cursor: pointer;
+  background-color: #fffae6;
   height: 290px;
   width: 290px;
   border-radius: 20px;
@@ -44,7 +41,6 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 .card-illustration {
   display: flex;
@@ -55,12 +51,9 @@ code {
 
 .card-illustration svg {
   padding: 13px;
-  background-color: #BCC4C6 ;
+  background-color: #bcc4c6;
   border-radius: 20px;
 }
-
-
-
 
 .text-and-icon {
   /* background-color: crimson; */
@@ -73,27 +66,17 @@ code {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-bottom-left-radius:20px ;
-  border-bottom-right-radius:20px ;
-
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
-
-
-.card-text-area h5{
+.card-text-area h5 {
   /* background-color: rgb(63, 20, 220); */
-  color : #A44D4D ;
+  color: #a44d4d;
   margin: 0;
-
 }
-
 
 .card-text-area p {
   /* background-color: rgb(220, 20, 117); */
   margin: 0;
-
 }
-
-
-
-
