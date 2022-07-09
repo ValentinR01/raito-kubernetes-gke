@@ -129,8 +129,8 @@ class UserController extends BaseController
                 'date_inscription' => $user->getDateInscription(),
                 'role' => $userRole->getName()
             );
-            
-            echo json_encode($userInfo);
+
+            return json_encode($userInfo);
         }
     }
     
