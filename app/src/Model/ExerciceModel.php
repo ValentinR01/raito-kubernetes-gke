@@ -12,7 +12,7 @@ class ExerciceModel extends BaseModel
     public function getAllExercice(): array
     {
         $query = $this->pdo->query('
-        SELECT * FROM '  . PDOFactory::DATABASE . '.exercice');
+        SELECT * FROM '  . PDOFactory::DATABASE . '.exercice WHERE status = 1');
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
