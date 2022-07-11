@@ -1,6 +1,7 @@
 import { NavIcon } from "components/atoms/grouping";
 import { Link } from "components/atoms/text";
 import React from "react";
+import { useLocation } from "react-router";
 import NavigationMenuLinkStyle from "./NavigationMenuLink.style";
 
 /**
@@ -11,8 +12,12 @@ import NavigationMenuLinkStyle from "./NavigationMenuLink.style";
  */
 
 const NavigationMenuLink = ({ path, icon, title }) => {
+  const { pathname } = useLocation();
+
+  const bold = pathname === path;
+
   return (
-    <NavigationMenuLinkStyle>
+    <NavigationMenuLinkStyle $bold={bold}>
       <NavIcon>{icon}</NavIcon>
       <Link to={path}>{title}</Link>
     </NavigationMenuLinkStyle>
