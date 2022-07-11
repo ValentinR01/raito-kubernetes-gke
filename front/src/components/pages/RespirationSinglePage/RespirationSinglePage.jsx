@@ -3,16 +3,18 @@ import { PageTemplate } from "components/templates";
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
 import "./RespirationSinglePage.css";
-import { songsDataRespiration } from "components/atoms/embedding/Player/audio";
-import PlayerRespiration from "components/atoms/embedding/PlayerRespiration/Player";
+import { exercisesData } from "components/atoms/embedding/Player/audio";
 import { respirationsList } from "components/pages/RespirationPage/respirationsData";
+import Player from "components/atoms/embedding/Player/Player";
 
 const RespirationSinglePage = () => {
   let { respirationId } = useParams();
   const [element] = useState([...respirationsList]);
-  const [songs, setSongs] = useState(songsDataRespiration);
+  const [songs, setSongs] = useState(exercisesData);
   const [isplaying, setisplaying] = useState(false);
-  const [currentSong, setCurrentSong] = useState(songsDataRespiration[respirationId - 1]);
+  const [currentSong, setCurrentSong] = useState(
+    exercisesData[respirationId - 1]
+  );
 
   const audioElem = useRef();
 
@@ -72,7 +74,7 @@ const RespirationSinglePage = () => {
                 ref={audioElem}
                 onTimeUpdate={onPlaying}
               />
-              <PlayerRespiration
+              <Player
                 songs={songs}
                 setSongs={setSongs}
                 isplaying={isplaying}
