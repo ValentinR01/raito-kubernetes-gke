@@ -6,6 +6,7 @@ import AppBackground from "components/molecules/embedding/AppBackground/AppBackg
 import AmbiancesPage from "components/pages/AmbiancesPage/AmbiancesPage";
 import AmbianceSinglePage from "components/pages/AmbianceSinglePage/AmbianceSinglePage";
 import HomePage from "components/pages/HomePage";
+import Profil from "components/pages/Profil/Profil";
 
 function App() {
   return (
@@ -14,13 +15,13 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/respiration/" element={<div />} />
-          <Route path="/profil" element={<div />} />
+          <Route path="/profil" element={<Profil />} />
           <Route path="/ambiances/">
             <Route index element={<AmbiancesPage />} />
             <Route path=":ambianceId" element={<AmbianceSinglePage />} />
           </Route>
         </Routes>
-        <AppBackground />
+        <AppBackground /> 
       </div>
     </ThemeProvider>
   );
