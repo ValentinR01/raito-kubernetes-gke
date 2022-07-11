@@ -3,8 +3,8 @@ import Input from "components/atoms/forms/Input/Input";
 import { useState } from "react";
 import { useEffect } from "react";
 import { ErrorText } from "components/molecules/forms";
-import BasicButtonStyle from "components/molecules/clickable/BasicButton/BasicButton.style";
 import { Stack } from "components/atoms/grouping";
+import BasicButton from "components/molecules/clickable/BasicButton/BasicButton";
 
 const LoginForm = () => {
   const [data, setData] = useState({});
@@ -91,12 +91,10 @@ const LoginForm = () => {
       />
       <ErrorText error={errors} />
       <Stack>
-        <BasicButtonStyle primary onClick={() => login()}>
+        <BasicButton primary onClick={() => login()}>
           Se Connecter
-        </BasicButtonStyle>
-        <BasicButtonStyle primary onClick={() => register()}>
-          S'inscrire
-        </BasicButtonStyle>
+        </BasicButton>
+        <BasicButton onClick={() => register()}>S'inscrire</BasicButton>
       </Stack>
     </div>
   );
