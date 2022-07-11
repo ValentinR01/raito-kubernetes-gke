@@ -1,12 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import { Card } from "components/atoms/grouping";
 import { Heading } from "components/atoms/text";
 import { PageTemplate } from "components/templates";
 import "./AmbiancesPage.css";
 import { ambiancesList } from "./ambiancesData";
 
-const Ambiances = () => {
+const AmbiancesPage = () => {
   const navigate = useNavigate();
   const handleClick = (props) => {
     navigate(`/step2/${props}`, { replace: true });
@@ -39,4 +38,4 @@ const Ambiances = () => {
   );
 };
 
-export default Ambiances;
+export default AmbiancesPage;
