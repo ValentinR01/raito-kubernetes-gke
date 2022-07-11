@@ -16,3 +16,10 @@ export const songsdata = [
         "url": "https://raitohetic.s3.eu-west-3.amazonaws.com/Forest.wav"
     }
 ]
+
+export const songsDataRespiration = [
+    {
+        "title": "Aurore",
+        "url": "https://soundcloud.com/meli-641644890/respiration-abdominale/s-S1UMFFcLAUp?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+    }
+]
