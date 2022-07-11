@@ -42,10 +42,12 @@ class UserController extends BaseController
                     $user = $userModel->getUserByEmail($email);
                     if ($email == $user->getEmail()) {
                         if (hash('sha256', $password) == $user->getPassword()) {
+                            $jwt = $this->generateJWT($user->getEmail());
+                            $this->HTTPResponse->setCookie('Token', $jwt,  (new \DateTime)->modify('+7 days')->getTimestamp());
                             http_response_code(200);
                             $response = array(
                                 "message" => "Login successfully",
-                                "jwt" => $this->generateJWT($user->getEmail())
+                                "jwt" => $jwt
                             );
                             $this->renderJSON($response);
                         }
@@ -99,10 +101,12 @@ class UserController extends BaseController
                         $newUser->setDateInscription(date('Y-m-d H:i:s'));
 
                         if ($userModel->addUser($newUser)) {
+                            $jwt = $this->generateJWT($newUser->getEmail());
+                            $this->HTTPResponse->setCookie('Token', $jwt,  (new \DateTime)->modify('+7 days')->getTimestamp());
                             http_response_code(201);
                             $response = array(
                                 'Message' => 'Votre compte a bien été créé. Veuillez vous connecter.',
-                                "JWT" => $this->generateJWT($newUser->getEmail())
+                                "JWT" => $jwt
                             );
                             $this->renderJSON($response);
                         }
@@ -153,7 +157,8 @@ class UserController extends BaseController
         $jwt = $this->HTTPRequest->getJWTDetailled();
         $email = $jwt->email;
         $newJWT = $this->generateJWT($email);
-        return json_encode($newJWT);
+        $this->HTTPResponse->setCookie('Token', $newJWT,  (new \DateTime)->modify('+7 days')->getTimestamp());
+        echo json_encode($newJWT);
     }
 
 }

@@ -21,8 +21,12 @@ class HTTPResponse
         exit(json_encode($messages, JSON_PRETTY_PRINT));
     }
 
-    public function setCookie($name, $value = '', $expire = 0, $path = null, $domain = null, $secure = false, $httpOnly = true)
+    public function setCookie($name, $value = '', int $expire = 0)
     {
+        $path = '/';
+        $domain = '*';
+        $secure = false;
+        $httpOnly = true;
         setcookie($name, $value, $expire, $path, $domain, $secure, $httpOnly);
     }
 

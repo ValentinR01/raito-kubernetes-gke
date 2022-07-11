@@ -13,6 +13,7 @@ class CategoryController extends BaseController
 
     public function executeIndex()
     {
+        return $this->renderJSON($_COOKIE);
         if ($this->HTTPRequest->isMethodAllowed('GET') && $this->HTTPRequest->isUserAllowed())
         {
             $categoryModel = new CategoryModel(new PDOFactory());
