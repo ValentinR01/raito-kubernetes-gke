@@ -1,3 +1,4 @@
+import { Text } from "components/atoms/grouping";
 import { Heading } from "components/atoms/text";
 import { ColorField } from "components/molecules/forms";
 import React, { useEffect, useState } from "react";
@@ -6,6 +7,14 @@ import ColorPickerWidgetStyle from "./ColorPickerWidget.style";
 const ColorPickerWidget = () => {
   const [errors, setErrors] = useState(null);
   const [color, setColor] = useState(null);
+  const [message, setMessage] = useState(null);
+
+  const displaySuccessMessage = () => {
+    if (!message) {
+      return;
+    }
+    return <Text textAlign="center">{message}</Text>;
+  };
 
   const postColor = async () => {
     try {
@@ -20,7 +29,7 @@ const ColorPickerWidget = () => {
       });
       if (response.status >= 200 && response.status <= 299) {
         const data = await response.json();
-        console.log(data);
+        setMessage(`La couleur de la lumière a été changée à ${data}`);
       } else throw new Error(response.statusText);
     } catch (err) {
       setErrors("La requête n'a pas fonctionné");
@@ -47,6 +56,7 @@ const ColorPickerWidget = () => {
         setColor={setColor}
         error={errors}
       />
+      {displaySuccessMessage()}
     </ColorPickerWidgetStyle>
   );
 };
