@@ -7,6 +7,8 @@ use \Firebase\JWT\JWT;
 
 class HTTPRequest
 {
+    private $key = 'DJplHnT6&1qyTa22aYu*d';
+
     public function isMethodAllowed($expectedMethod) : string|bool
     {
         $usedMethod = $_SERVER['REQUEST_METHOD'];
@@ -50,11 +52,10 @@ class HTTPRequest
 
     public function isTokenValid(string $jwt): bool
     {
-        $jwt = substr($jwt, 7);
-        $key = 'DJplHnT6&1qyTa22aYu*d';
+       
         try {
             // Decode and Analyse
-            $JWTDecode = JWT::decode($jwt, new Key($key, 'HS256'));
+            $JWTDecode = JWT::decode($jwt, new Key($this->key, 'HS256'));
             $expiredDate = $JWTDecode->expiredAt;
             $dateNow = new \DateTime();
             $dateNow->setTimezone(new \DateTimeZone('Europe/Paris'));
@@ -76,10 +77,8 @@ class HTTPRequest
     }
 
 
-    public function getJWTAuthentification() {
-        $jwt = $_SERVER['HTTP_AUTHORIZATION'];
-        $isMyTokenValid = $this->isTokenValid($jwt);
-        
+    public function isUserAllowed() {
+        $jwt = $_COOKIE['Token'] ?? null;
         
         if (!isset($jwt) or $jwt == '') {
             http_response_code(401);
@@ -88,17 +87,26 @@ class HTTPRequest
             ));
             return false;
         }
-        else if (!$isMyTokenValid){
+        else if (!$this->isTokenValid($jwt)){
             http_response_code(401);
             echo json_encode(array(
-                'message' => 'Your token is not valid'
+                'message' => 'Your token is not valid',
+                'jwt' => $jwt
             ));
             return false;
         }
         else return true;
     }
-    
 
+    public function getJWTDetailled(){
+        
+        if ($this->isUserAllowed()) {
+            $jwt = $_COOKIE['Token'];
+            $jwtDetailled = JWT::decode($jwt, new Key($this->key, 'HS256'));
+            return $jwtDetailled; 
+        }
+    }
+    
 
     public function getBasicAuthentification()
     {

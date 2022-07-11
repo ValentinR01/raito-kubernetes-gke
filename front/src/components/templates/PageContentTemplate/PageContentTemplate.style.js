@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const PageContentTemplateStyle = styled.div`
 width: 100vw;
-padding-top: 80px;
+padding-top: 70px;
 display: flex;
 flex-direction: column;
 align-items:center;

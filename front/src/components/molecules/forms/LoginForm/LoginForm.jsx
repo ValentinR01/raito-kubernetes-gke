@@ -1,15 +1,11 @@
 import React from "react";
 import Input from "components/atoms/forms/Input/Input";
-import ConnexionButton from "components/molecules/clickable/ConnexionButton/ConnexionButton";
-import InscriptionButton from "components/molecules/clickable/InscriptionButton/InscriptionButton";
 import { useState } from "react";
-import { useEffect } from "react";
 import { ErrorText } from "components/molecules/forms";
-import BasicButtonStyle from "components/molecules/clickable/BasicButton/BasicButton.style";
 import { Stack } from "components/atoms/grouping";
-import "./Login.css" ;
+import "./LoginForm.css" ;
 import { useNavigate } from "react-router-dom";
-
+import BasicButton from "components/molecules/clickable/BasicButton/BasicButton";
 
 const LoginForm = () => {
   const [data, setData] = useState({});
@@ -105,10 +101,6 @@ const LoginForm = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   return (
     <div>
       <p>Email</p>
@@ -144,12 +136,10 @@ const LoginForm = () => {
 
       
       <Stack>
-        <BasicButtonStyle primary onClick={() => login()}>
+        <BasicButton primary onClick={() => login()}>
           Se Connecter
-        </BasicButtonStyle>
-        <BasicButtonStyle primary onClick={() => register()}>
-          S'inscrire
-        </BasicButtonStyle>
+        </BasicButton>
+        <BasicButton onClick={() => register()}>S'inscrire</BasicButton>
       </Stack>
     </div>
   );
