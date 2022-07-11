@@ -7,6 +7,8 @@ use \Firebase\JWT\JWT;
 
 class HTTPRequest
 {
+    private $key = 'DJplHnT6&1qyTa22aYu*d';
+
     public function isMethodAllowed($expectedMethod) : string|bool
     {
         $usedMethod = $_SERVER['REQUEST_METHOD'];
@@ -51,10 +53,10 @@ class HTTPRequest
     public function isTokenValid(string $jwt): bool
     {
         $jwt = substr($jwt, 7);
-        $key = 'DJplHnT6&1qyTa22aYu*d';
+       
         try {
             // Decode and Analyse
-            $JWTDecode = JWT::decode($jwt, new Key($key, 'HS256'));
+            $JWTDecode = JWT::decode($jwt, new Key($this->key, 'HS256'));
             $expiredDate = $JWTDecode->expiredAt;
             $dateNow = new \DateTime();
             $dateNow->setTimezone(new \DateTimeZone('Europe/Paris'));
@@ -76,7 +78,7 @@ class HTTPRequest
     }
 
 
-    public function getJWTAuthentification() {
+    public function isUserAllowed() {
         $jwt = $_SERVER['HTTP_AUTHORIZATION'];
         $isMyTokenValid = $this->isTokenValid($jwt);
         
@@ -98,13 +100,14 @@ class HTTPRequest
         else return true;
     }
 
-    public function getJWT(){
-        $jwt = $_SERVER['HTTP_AUTHORIZATION'];
-        if ($this->isTokenValid($jwt)) {
-            
-
+    public function getJWTDetailled(){
+        
+        if ($this->isUserAllowed()) {
+            $jwt = $_SERVER['HTTP_AUTHORIZATION'];
+            $jwt = substr($jwt, 7);
+            $jwtDetailled = JWT::decode($jwt, new Key($this->key, 'HS256'));
+            return $jwtDetailled; 
         }
-
     }
     
 

@@ -45,14 +45,14 @@ CREATE TABLE `ambiance` (
   `music_url` varchar(200) NOT NULL,
   `image_url` varchar(200) NOT NULL,
   `description` text NOT NULL,
-  `author` int(4) NOT NULL,
+  `author_id` int(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `ambiance`
 --
-
+SET NAMES utf8;
 INSERT INTO `ambiance` VALUES
 (1,'Oiseau',2,1,6.4,'https://raitohetic.s3.eu-west-3.amazonaws.com/Birds.wav','https://raitohetic.s3.eu-west-3.amazonaws.com/Component_10.svg',"Détendez-vous au doux son des oiseaux de cette forêt verdoyante. Relaxant et rafraichissant, laissez-vous porter... ",1),
 (2,'Feu',4,1,0.4,'https://raitohetic.s3.eu-west-3.amazonaws.com/FIREBurn.wav','https://raitohetic.s3.eu-west-3.amazonaws.com/Component_1.svg',"Crépitez au son de la flamme. Apaisez vous avec ce doux son rappelant le chocolat chaud et l'hiver ...",1),
@@ -76,13 +76,13 @@ CREATE TABLE `exercice` (
   `rise_duration` decimal(2,1) DEFAULT NULL,
   `fall_duration` decimal(2,1) DEFAULT NULL,
   `high_intensity` decimal(2,1) DEFAULT NULL,
-  `low_intencity` decimal(2,1) DEFAULT NULL,
+  `low_intensity` decimal(2,1) DEFAULT NULL,
   `color` varchar(10) NOT NULL,
   `url_music` varchar(200) NOT NULL,
   `url_image` varchar(200) NOT NULL,
-  `note` decimal(3,1) DEFAULT NULL,
-  `nb_note` int(5) DEFAULT NULL,
-  `id_user` int(5) NOT NULL,
+  `rating` decimal(3,1) DEFAULT NULL,
+  `nb_rating` int(5) DEFAULT NULL,
+  `author_id` int(5) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
