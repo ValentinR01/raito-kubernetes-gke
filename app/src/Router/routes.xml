@@ -13,6 +13,6 @@
 
     <!-- Content -->
     <route path="exercice" action="ExerciceList" controller="ExerciceController"/>
-    <!--<route path="ambiance" action="AmbianceList" controller="AmbianceController"/>-->
-    <route path="ambiance" action="AmbianceById" controller="AmbianceController" params="id"/>
+    <route path="ambiance" action="Ambiance" controller="AmbianceController"/>
+    <route path="ambiance" action="Ambiance" controller="AmbianceController" params="id"/>
 </routes>
