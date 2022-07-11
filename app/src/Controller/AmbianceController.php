@@ -28,9 +28,7 @@ class AmbianceController extends BaseController
             $id = $_GET['id'];
             $contentModel = new AmbianceModel(new PDOFactory());
             $ambiance = $contentModel->getAmbianceById($id);
-            return $this->renderJSON(array(
-                 $ambiance
-            ));
+            return $this->renderJSON($ambiance);
         }
     }
 
