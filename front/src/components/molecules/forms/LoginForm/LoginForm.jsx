@@ -1,7 +1,5 @@
 import React from "react";
 import Input from "components/atoms/forms/Input/Input";
-import ConnexionButton from "components/molecules/clickable/ConnexionButton/ConnexionButton";
-import InscriptionButton from "components/molecules/clickable/InscriptionButton/InscriptionButton";
 import { useState } from "react";
 import { useEffect } from "react";
 import { ErrorText } from "components/molecules/forms";
