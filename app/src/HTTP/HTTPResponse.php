@@ -24,7 +24,7 @@ class HTTPResponse
     public function setCookie($name, $value = '', int $expire = 0)
     {
         $path = '/';
-        $domain = '*';
+        $domain = '';
         $secure = false;
         $httpOnly = true;
         setcookie($name, $value, $expire, $path, $domain, $secure, $httpOnly);

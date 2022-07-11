@@ -158,7 +158,7 @@ class UserController extends BaseController
         $email = $jwt->email;
         $newJWT = $this->generateJWT($email);
         $this->HTTPResponse->setCookie('Token', $newJWT,  (new \DateTime)->modify('+7 days')->getTimestamp());
-        echo json_encode($newJWT);
+        return json_encode($newJWT);
     }
 
 }
