@@ -9,7 +9,7 @@ import { ambiancesList } from "components/pages/AmbiancesPage/ambiancesData";
 
 const AmbianceSinglePage = () => {
   let { ambianceId } = useParams();
-  const [element, setElement] = useState([...ambiancesList]);
+  const [element] = useState([...ambiancesList]);
   const [songs, setSongs] = useState(songsdata);
   const [isplaying, setisplaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(songsdata[ambianceId - 1]);
