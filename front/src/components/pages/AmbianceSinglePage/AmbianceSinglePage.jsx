@@ -53,8 +53,7 @@ const AmbianceSinglePage = () => {
               <div>
                 <h3>{theSong.title} </h3>
                 <p>
-                  {" "}
-                  <strong>Auteur :</strong> {theSong.author}{" "}
+                  <strong>Auteur :</strong> {theSong.author}
                 </p>
               </div>
             </div>
