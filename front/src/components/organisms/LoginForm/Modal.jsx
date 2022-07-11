@@ -1,6 +1,6 @@
 import React from "react";
 import ModalStyle from "./ModalStyle.style";
-import LoginForm from "../../molecules/forms/LoginForm/LoginForm";
+import LoginForm from "components/molecules/forms/LoginForm/LoginForm";
 import CloseButtonModalStyle from "./CloseButtonModalStyle";
 import Card from "components/atoms/grouping/Card/Card";
 import ModalBackground from "components/atoms/grouping/ModalBackground/ModalBackground";
