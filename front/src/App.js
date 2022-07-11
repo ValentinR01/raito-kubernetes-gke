@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom";
 import AppBackground from "components/molecules/embedding/AppBackground/AppBackground";
 import AmbiancesPage from "components/pages/AmbiancesPage/AmbiancesPage";
 import AmbianceSinglePage from "components/pages/AmbianceSinglePage/AmbianceSinglePage";
-import Step2 from "components/pages/Step2/Step2";
 import HomePage from "components/pages/HomePage";
 
 function App() {
@@ -16,8 +15,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/respiration/" element={<div />} />
           <Route path="/profil" element={<div />} />
-          <Route path="/ambiances" element={<AmbiancesPage />} />
-          <Route path="/step2" element={<Step2 />}>
+          <Route path="/ambiances/">
+            <Route index element={<AmbiancesPage />} />
             <Route path=":ambianceId" element={<AmbianceSinglePage />} />
           </Route>
         </Routes>
