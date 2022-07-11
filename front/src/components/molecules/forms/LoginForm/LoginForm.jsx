@@ -7,11 +7,21 @@ import { useEffect } from "react";
 import { ErrorText } from "components/molecules/forms";
 import BasicButtonStyle from "components/molecules/clickable/BasicButton/BasicButton.style";
 import { Stack } from "components/atoms/grouping";
+import "./Login.css" ;
+import { useNavigate } from "react-router-dom";
+
 
 const LoginForm = () => {
   const [data, setData] = useState({});
 
   const [errors, setErrors] = useState(null);
+
+  const [successRegister, setSuccessRegister] = useState(false);
+  const [successLogin, setSuccessLogin] = useState(false);
+  const navigate = useNavigate();
+
+
+
 
   const handleChange = (e) => {
     const key = e.target.name;
@@ -23,7 +33,8 @@ const LoginForm = () => {
    * @description API call to login
    */
   const login = async () => {
-    const encodedData = btoa(`${data.email}:${data.password}`);
+    setSuccessRegister(false) ;
+    const encodedData = window.btoa(`${data.email}:${data.password}`);
     const headers = new Headers({
       Authorization: `Basic ${encodedData}`,
       //   "Content-Type": "application/x-www-form-urlencoded",
@@ -38,16 +49,28 @@ const LoginForm = () => {
       });
       if (response.status >= 200 && response.status <= 299) {
         const data = await response.json();
-        console.log(data);
+        setSuccessLogin(true) ;
+        setErrors("");
+        navigate("/profil", { replace: true });
+
+
+
+
       } else throw new Error(response.statusText);
+      // setSuccessLogin(false) ;
+      setErrors("");
+
     } catch (err) {
       setErrors("La requête n'a pas fonctionné");
+      setSuccessLogin(false) ;      
       console.warn(err);
     }
   };
 
   const register = async () => {
-    const encodedData = btoa(`${data.email}:${data.password}`);
+    setSuccessLogin(false) ;
+
+    const encodedData = window.btoa(`${data.email}:${data.password}`);
     const headers = new Headers({
       Authorization: `Basic ${encodedData}`,
       //   "Content-Type": "application/x-www-form-urlencoded",
@@ -63,10 +86,22 @@ const LoginForm = () => {
       if (response.status >= 200 && response.status <= 299) {
         const data = await response.json();
         console.log(data);
+        setSuccessRegister(true) ;
+        setErrors("");
+        navigate("/profil", { replace: true });
+
+
       } else throw new Error(response.statusText);
+      // setSuccessRegister(false) ;
+      setErrors("");
+
+
+
     } catch (err) {
       setErrors("La requête n'a pas fonctionné");
       console.warn(err);
+      setSuccessRegister(false) ;
+
     }
   };
 
@@ -91,7 +126,23 @@ const LoginForm = () => {
         placeholder="password"
         onChange={(e) => handleChange(e)}
       />
-      <ErrorText error={errors} />
+
+
+      <ErrorText error={errors}   />
+
+
+
+      <div className={successLogin ? "success-login" : "fail"} >
+        <span> Connexion réussie </span>
+      </div>
+
+
+      <div className={successRegister ? "success-register" : "fail"} >
+        <span> Enregistrement réussie </span>
+      </div>
+
+
+      
       <Stack>
         <BasicButtonStyle primary onClick={() => login()}>
           Se Connecter
