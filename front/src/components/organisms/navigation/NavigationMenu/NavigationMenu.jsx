@@ -10,7 +10,7 @@ const NavigationMenu = () => {
   const navMenuData = {
     ambiances: {
       title: "Ambiances",
-      path: "/ambiance/",
+      path: "/ambiances/",
       icon: <AmbianceIcon />,
     },
     respiration: {
