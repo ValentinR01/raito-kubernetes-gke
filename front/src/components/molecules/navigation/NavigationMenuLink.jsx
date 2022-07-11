@@ -1,3 +1,4 @@
+import { NavIcon } from "components/atoms/grouping";
 import { Link } from "components/atoms/text";
 import React from "react";
 import NavigationMenuLinkStyle from "./NavigationMenuLink.style";
@@ -12,7 +13,7 @@ import NavigationMenuLinkStyle from "./NavigationMenuLink.style";
 const NavigationMenuLink = ({ path, icon, title }) => {
   return (
     <NavigationMenuLinkStyle>
-      <span className="icon-bar">{icon}</span>
+      <NavIcon>{icon}</NavIcon>
       <Link to={path}>{title}</Link>
     </NavigationMenuLinkStyle>
   );
