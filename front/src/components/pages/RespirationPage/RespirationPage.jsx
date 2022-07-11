@@ -9,7 +9,7 @@ import { Text } from "components/atoms/grouping";
 const RespirationPage = () => {
   const ShowAllRespirationData = respirationsList.map((element) => {
     return (
-      <Link to={`/respiration/${element.id}`}>
+      <Link to={`/respiration/${element.id}`} key={element.id}>
         <div className="card-body" key={element.id}>
           <div className="card-illustration">{element.illustration}</div>
           <div className="text-and-icon">

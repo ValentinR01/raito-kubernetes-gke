@@ -22,7 +22,14 @@ Text.propTypes = {
   children: PropTypes.string,
   className: PropTypes.string,
   size: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge"]),
-  color: PropTypes.oneOf(["cream", "terra", "primary", "secondary", "error"]),
+  color: PropTypes.oneOf([
+    "cream",
+    "terra",
+    "primary",
+    "secondary",
+    "error",
+    "black",
+  ]),
   textAlign: PropTypes.oneOf(["right", "left", "center", "justify"]),
 };
 
