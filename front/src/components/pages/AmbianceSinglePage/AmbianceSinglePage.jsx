@@ -44,7 +44,7 @@ const AmbianceSinglePage = () => {
   });
   return (
     <PageTemplate>
-      <Card>
+      <Card transparent>
         <div className="container-single-ambiance">
           <div className="mini-illu">
             <div className="color-area"> </div>
