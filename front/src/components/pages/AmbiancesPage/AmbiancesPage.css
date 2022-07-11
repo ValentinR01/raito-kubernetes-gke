@@ -1,7 +1,7 @@
 .all-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 105px 17px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px 25px;
 }
 
 .card-body {

@@ -33,10 +33,8 @@ const Ambiances = () => {
 
   return (
     <PageTemplate>
-      <Card>
-        <Heading>Ambiances</Heading>
-        <div className="all-cards">{ShowAllAmbianceData}</div>
-      </Card>
+      <Heading>Ambiances</Heading>
+      <div className="all-cards">{ShowAllAmbianceData}</div>
     </PageTemplate>
   );
 };
