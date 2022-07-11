@@ -1,0 +1,133 @@
+
+.container-single-ambiance {
+    display: grid;
+    height: 570px;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 10px 20px; 
+    grid-template-areas: 
+      "mini-illu play-area"
+      "description play-area"; 
+}
+
+.mini-illu { 
+  grid-area: mini-illu;
+  background-color: #fffae6 ;
+  border-radius: 20px;
+}
+
+
+/** Description */
+
+.description {
+  grid-area: description; 
+  background-color: #fffae6 ;
+  border-radius: 20px;
+}
+
+
+.description div {
+  height: 100%;
+  margin : 30px 10px  ;
+  /* background-color: #1622d1 ; */
+
+}
+
+ .description div h4 {
+  margin-top : 20px ;
+  color : #A44D4D ;
+}
+
+
+.description div p {
+  margin-top : 20px
+}
+
+
+
+.play-area { 
+  grid-area: play-area;
+  background-color: #fffae6 ;
+  border-radius: 20px;
+}
+
+
+.mini-illu div.color-area {
+  background: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
+  margin-top: 28.08px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  width: 170px;
+  height: 170px;
+}
+
+
+.mini-illu div svg {
+  padding: 13px;
+  background-color: #BCC4C6;
+  border-radius: 20px;
+}
+
+
+/** Content */
+
+.content {
+  /* height: 100px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.content > * {
+  height: 100px;
+  margin : 0px 10px  20px ;
+  /* background-color: rgb(252, 202, 202); */
+}
+
+.content h3 {
+  color : #A44D4D ;
+  display: block;
+}
+
+.content p {
+  margin: 0;
+}
+
+/** Play-area */
+
+.play-area {
+  /* background-color: aqua; */
+  position: relative;
+
+}
+
+
+
+.play-area div.play-illustration  {
+  background-color: #BCC4C6;
+  padding: 17px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  margin-top: 40px;
+  width: 210px;
+  height: 210px;
+}
+
+
+.play-zone {
+  /* background-color: #1b369f; */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 40px;
+
+}
+
+
+
+
+
+ 

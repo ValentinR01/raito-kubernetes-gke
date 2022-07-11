@@ -13,7 +13,7 @@ export const ambiancesList = [
     icon: <IconEmptyHeart fill="#A44D4D" width={27} height={27} />,
     author: "Team Raito",
     description:
-      "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+      "Détendez-vous au doux son des oiseaux de cette forêt verdoyante. Relaxant et rafraichissant, laissez-vous porter...",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const ambiancesList = [
     icon: <IconEmptyHeart fill="#A44D4D" width={27} height={27} />,
     author: "Team Raito",
     description:
-      "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+      "Crépitez au son de la flamme. Apaisez vous avec ce doux son rappelant le chocolat chaud et l'hiver ...",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export const ambiancesList = [
     icon: <IconEmptyHeart fill="#A44D4D" width={27} height={27} />,
     author: "Team Raito",
     description:
-      "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+      "Besoin de vous reconnecter à la nature ? Plongez-vous dans une ambiance de calme et de sérénité ...",
   },
   {
     id: 4,
@@ -43,6 +43,6 @@ export const ambiancesList = [
     icon: <IconEmptyHeart fill="#A44D4D" width={27} height={27} />,
     author: "Team Raito",
     description:
-      "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+      "Que diriez vous d'une balade en forêt? Laissez vous emporter par le son des feuilles qui craquellent ...",
   },
 ];
