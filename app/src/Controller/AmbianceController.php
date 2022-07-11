@@ -21,11 +21,16 @@ class AmbianceController extends BaseController
 
 
     // Detailled view
-    public function executeExerciceById (int $id = 1) {
-        if ($this->HTTPRequest->isMethodAllowed('GET'))
+    public function executeAmbianceById ()
+    {
+        if ($this->HTTPRequest->isMethodAllowed('GET') && ($this->HTTPRequest->isUserAllowed()))
         {
+            $id = $_GET['id'];
             $contentModel = new AmbianceModel(new PDOFactory());
-            //$exercice = $contentModel->getExerciceById($id);
+            $ambiance = $contentModel->getAmbianceById($id);
+            return $this->renderJSON(array(
+                 $ambiance
+            ));
         }
     }
 
