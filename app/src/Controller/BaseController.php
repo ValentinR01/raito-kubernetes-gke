@@ -24,26 +24,10 @@ abstract class BaseController
         }
     }
 
-    public function render(string $template, array $arguments)
-    {
-        $view = $this->viewsDir . $template;
-
-        foreach ($arguments as $key => $value) {
-            ${$key} = $value;
-        }
-
-
-        ob_start();
-        require $view;
-        $content = ob_get_clean();
-        require $this->templateFile;
-        exit;
-
-    }
 
     public function renderJSON($content)
     {
-        //$this->HTTPResponse->addHeader('Content-Type: application/json');
+        $this->HTTPResponse->addHeader('Content-Type: application/json');
         echo json_encode($content, JSON_PRETTY_PRINT);
     }
 }

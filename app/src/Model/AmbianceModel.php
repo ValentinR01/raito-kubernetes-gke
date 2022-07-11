@@ -8,7 +8,6 @@ use PDO;
 
 class AmbianceModel extends BaseModel
 {
-
     public function getAllAmbiance(): array
     {
         $query = $this->pdo->query('

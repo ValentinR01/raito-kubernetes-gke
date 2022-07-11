@@ -8,7 +8,7 @@ use App\Model\ExerciceModel;
 
 class ExerciceController extends BaseController
 {
-    // All Exercices & Ambiances
+    // Get all exercices
     public function executeExerciceList()
     {
         if ($this->HTTPRequest->isMethodAllowed('GET') && ($this->HTTPRequest->isUserAllowed()))
