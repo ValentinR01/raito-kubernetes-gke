@@ -11,7 +11,6 @@ const NavigationMenuLinkStyle = styled.li`
   ${({ $bold }) => {
     let fontWeight = "normal";
     if ($bold) {
-      console.log($bold);
       fontWeight = "bold";
     }
     return css`
