@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { Card } from "components/atoms/grouping";
 import { Heading } from "components/atoms/text";
 import { PageTemplate } from "components/templates";
+import "./Ambiances.css";
 
 const Ambiances = () => {
   const navigate = useNavigate();
