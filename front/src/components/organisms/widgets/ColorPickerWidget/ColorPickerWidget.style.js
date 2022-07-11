@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-const ColorFieldStyle = styled.div``;
+const ColorPickerWidgetStyle = styled.div``;
 
-export default ColorFieldStyle;
+export default ColorPickerWidgetStyle;
