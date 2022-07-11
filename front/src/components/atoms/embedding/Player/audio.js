@@ -20,6 +20,6 @@ export const songsdata = [
 export const exercisesData = [
   {
     title: "Aurore",
-    url: "https://soundcloud.com/meli-641644890/respiration-abdominale/s-S1UMFFcLAUp?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+    url: "https://raitohetic.s3.eu-west-3.amazonaws.com/sound_respiration_abdominale.wav",
   },
 ];
