@@ -1,6 +1,7 @@
 import { Link } from "components/atoms/text";
 import React from "react";
 import NavigationMenuLinkStyle from "./NavigationMenuLink.style";
+import Icon from "components/atoms/grouping/NavIcon/Icon";
 
 /**
  * @param {String} path The router path
@@ -12,7 +13,7 @@ import NavigationMenuLinkStyle from "./NavigationMenuLink.style";
 const NavigationMenuLink = ({ path, icon, title }) => {
   return (
     <NavigationMenuLinkStyle>
-      <span className="icon-bar">{icon}</span>
+      <Icon><span>{icon}</span></Icon>
       <Link to={path}>{title}</Link>
     </NavigationMenuLinkStyle>
   );
