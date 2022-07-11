@@ -9,6 +9,7 @@ class HTTPRequest
 {
     private $key = 'DJplHnT6&1qyTa22aYu*d';
 
+    // Check if Method is allowed + Error management
     public function isMethodAllowed($expectedMethod) : string|bool
     {
         $usedMethod = $_SERVER['REQUEST_METHOD'];
@@ -21,11 +22,13 @@ class HTTPRequest
         }
     }
 
+    // Get the request URI
     public function GetRequestURI()
     {
         return $_SERVER['REQUEST_URI'];
     }
     
+    // Get the color send from the frontend
     public function getColor()
     {
         try {
@@ -46,10 +49,12 @@ class HTTPRequest
         }
     }
 
+    // Get the header of a request
     public function getHeader(){
         return $_SERVER;
     }
 
+    // Check if a token is still valid 
     public function isTokenValid(string $jwt): bool
     {
        
@@ -76,7 +81,7 @@ class HTTPRequest
         }
     }
 
-
+    // Check if a user is allowed 
     public function isUserAllowed() {
         $jwt = $_COOKIE['Token'] ?? null;
         
@@ -98,6 +103,7 @@ class HTTPRequest
         else return true;
     }
 
+    // Get all information about JWT 
     public function getJWTDetailled(){
         
         if ($this->isUserAllowed()) {
@@ -107,7 +113,7 @@ class HTTPRequest
         }
     }
     
-
+    // Get Email and Password from a basic auth + Error Management
     public function getBasicAuthentification()
     {
         // echo json_encode($_SERVER, JSON_PRETTY_PRINT);

@@ -116,6 +116,7 @@ class UserController extends BaseController
         }
     }
 
+    // Get all informations from a user
     public function executeUserInfo()
     {
         if ($this->HTTPRequest->isMethodAllowed('GET')  && $this->HTTPRequest->isUserAllowed()) {
@@ -136,7 +137,7 @@ class UserController extends BaseController
         }
     }
     
-
+    // Generate a JWT
     private function generateJWT(string $email)
     {
         $key = 'DJplHnT6&1qyTa22aYu*d';
@@ -153,6 +154,7 @@ class UserController extends BaseController
         return $jwt;
     }
 
+    // Refresh an old Token 
     public function executeRefreshToken(){
         $jwt = $this->HTTPRequest->getJWTDetailled();
         $email = $jwt->email;
@@ -163,5 +165,4 @@ class UserController extends BaseController
             "JWT" => $newJWT
         ));
     }
-
 }
