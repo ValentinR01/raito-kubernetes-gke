@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const NavigationMenuLinkStyle = styled.li`
   color: #f3edd7;
@@ -6,6 +6,17 @@ const NavigationMenuLinkStyle = styled.li`
   text-transform: uppercase;
   cursor: pointer;
   margin-bottom: 30px;
+  font-weight: bold;
+
+  ${({ $bold }) => {
+    let fontWeight = "normal";
+    if ($bold) {
+      fontWeight = "bold";
+    }
+    return css`
+      font-weight: ${fontWeight};
+    `;
+  }};
 `;
 
 export default NavigationMenuLinkStyle;

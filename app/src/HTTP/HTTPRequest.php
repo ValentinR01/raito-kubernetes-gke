@@ -49,6 +49,24 @@ class HTTPRequest
         }
     }
 
+    public function sendColor($hexadecimal) {
+        $data = http_build_query(
+            array(
+                'hexadecimal' => $hexadecimal,
+            )
+        );
+        $opts = array('http' =>
+            array(
+                'method' => 'POST',
+                'header' => 'Content-type: application/x-www-form-urlencoded',
+                'content' => $data
+            )
+        );
+        $context = stream_context_create($opts);
+        $result = file_get_contents('192.168.55.86:80', false, $context);
+        echo $result;
+    }
+
     // Get the header of a request
     public function getHeader(){
         return $_SERVER;

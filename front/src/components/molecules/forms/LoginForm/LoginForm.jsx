@@ -3,7 +3,7 @@ import Input from "components/atoms/forms/Input/Input";
 import { useState } from "react";
 import { ErrorText } from "components/molecules/forms";
 import { Stack } from "components/atoms/grouping";
-import "./LoginForm.css" ;
+import "./LoginForm.css";
 import { useNavigate } from "react-router-dom";
 import BasicButton from "components/molecules/clickable/BasicButton/BasicButton";
 
@@ -16,9 +16,6 @@ const LoginForm = () => {
   const [successLogin, setSuccessLogin] = useState(false);
   const navigate = useNavigate();
 
-
-
-
   const handleChange = (e) => {
     const key = e.target.name;
     const value = e.target.value;
@@ -29,7 +26,7 @@ const LoginForm = () => {
    * @description API call to login
    */
   const login = async () => {
-    setSuccessRegister(false) ;
+    setSuccessRegister(false);
     const encodedData = window.btoa(`${data.email}:${data.password}`);
     const headers = new Headers({
       Authorization: `Basic ${encodedData}`,
@@ -45,7 +42,7 @@ const LoginForm = () => {
       });
       if (response.status >= 200 && response.status <= 299) {
         const data = await response.json();
-        setSuccessLogin(true) ;
+        setSuccessLogin(true);
         setErrors("");
         navigate("/profil");
 
@@ -54,16 +51,15 @@ const LoginForm = () => {
 
       } else throw new Error(response.statusText);
       setErrors("");
-
     } catch (err) {
       setErrors("La requête n'a pas fonctionné");
-      setSuccessLogin(false) ;      
+      setSuccessLogin(false);
       console.warn(err);
     }
   };
 
   const register = async () => {
-    setSuccessLogin(false) ;
+    setSuccessLogin(false);
 
     const encodedData = window.btoa(`${data.email}:${data.password}`);
     const headers = new Headers({
@@ -80,7 +76,7 @@ const LoginForm = () => {
       if (response.status >= 200 && response.status <= 299) {
         const data = await response.json();
         console.log(data);
-        setSuccessRegister(true) ;
+        setSuccessRegister(true);
         setErrors("");
         navigate("/profil");
 
@@ -88,14 +84,10 @@ const LoginForm = () => {
       } else throw new Error(response.statusText);
       // setSuccessRegister(false) ;
       setErrors("");
-
-
-
     } catch (err) {
       setErrors("La requête n'a pas fonctionné");
       console.warn(err);
-      setSuccessRegister(false) ;
-
+      setSuccessRegister(false);
     }
   };
 
@@ -117,22 +109,16 @@ const LoginForm = () => {
         onChange={(e) => handleChange(e)}
       />
 
+      <ErrorText error={errors} />
 
-      <ErrorText error={errors}   />
-
-
-
-      <div className={successLogin ? "success-login" : "fail"} >
+      <div className={successLogin ? "success-login" : "fail"}>
         <span> Connexion réussie </span>
       </div>
 
-
-      <div className={successRegister ? "success-register" : "fail"} >
-        <span> Enregistrement réussie </span>
+      <div className={successRegister ? "success-register" : "fail"}>
+        <span> Enregistrement réussi </span>
       </div>
 
-
-      
       <Stack>
         <BasicButton primary onClick={() => login()}>
           Se Connecter
