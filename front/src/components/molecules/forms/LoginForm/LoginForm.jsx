@@ -47,13 +47,12 @@ const LoginForm = () => {
         const data = await response.json();
         setSuccessLogin(true) ;
         setErrors("");
-        navigate("/profil", { replace: true });
+        navigate("/profil");
 
 
 
 
       } else throw new Error(response.statusText);
-      // setSuccessLogin(false) ;
       setErrors("");
 
     } catch (err) {
@@ -69,7 +68,6 @@ const LoginForm = () => {
     const encodedData = window.btoa(`${data.email}:${data.password}`);
     const headers = new Headers({
       Authorization: `Basic ${encodedData}`,
-      //   "Content-Type": "application/x-www-form-urlencoded",
     });
     console.log(headers);
     try {
@@ -84,7 +82,7 @@ const LoginForm = () => {
         console.log(data);
         setSuccessRegister(true) ;
         setErrors("");
-        navigate("/profil", { replace: true });
+        navigate("/profil");
 
 
       } else throw new Error(response.statusText);
