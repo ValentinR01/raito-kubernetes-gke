@@ -3,6 +3,7 @@ import { Link } from "components/atoms/text";
 import React from "react";
 import { useLocation } from "react-router";
 import NavigationMenuLinkStyle from "./NavigationMenuLink.style";
+import NavigationSelector from "./NavigationSelector/NavigationSelector";
 
 /**
  * @param {String} path The router path
@@ -14,10 +15,11 @@ import NavigationMenuLinkStyle from "./NavigationMenuLink.style";
 const NavigationMenuLink = ({ path, icon, title }) => {
   const { pathname } = useLocation();
 
-  const bold = pathname === path;
+  const selected = pathname === path;
 
   return (
-    <NavigationMenuLinkStyle $bold={bold}>
+    <NavigationMenuLinkStyle $bold={selected}>
+      <NavigationSelector visible={selected} />
       <NavIcon>{icon}</NavIcon>
       <Link to={path}>{title}</Link>
     </NavigationMenuLinkStyle>
