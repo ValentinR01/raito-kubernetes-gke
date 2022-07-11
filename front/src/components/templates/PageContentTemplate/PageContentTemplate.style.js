@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const PageContentTemplateStyle = styled.div`
-width: 70vw;
+width: 100vw;
+padding-top: 70px;
+display: flex;
+flex-direction: column;
 align-items:center;
 overflow:auto;
 scrollbar: hidden;
-margin: 10px;
-border-radius: 12px;
-opacity: 0.20px
 -ms-overflow-style: none;
     &::-webkit-scrollbar {
         display: none;

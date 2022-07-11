@@ -7,9 +7,8 @@ require_once('vendor/autoload.php');
 
 use App\Entity\User;
 use App\Factory\PDOFactory;
-use APP\HTTP\HTTPRequest as HTTPHTTPRequest;
 use App\Model\UserModel;
-use Firebase\JWT\Key;
+use App\Model\UserRoleModel;
 use \Firebase\JWT\JWT;
 
 
@@ -115,9 +114,21 @@ class UserController extends BaseController
 
     public function executeUserInfo()
     {
-        if ($this->HTTPRequest->isMethodAllowed('GET')) {
-            
-            
+        if ($this->HTTPRequest->isMethodAllowed('GET')  && $this->HTTPRequest->isUserAllowed()) {
+            $tokenInfo = $this->HTTPRequest->getJWTDetailled();
+
+            $userModel = new UserModel (new PDOFactory());
+            $userRoleModel = new UserRoleModel (new PDOFactory());
+            $user = $userModel->getUserByEmail($tokenInfo->email);
+            $userRole = $userRoleModel->getRoleName($user->getIdRole());
+
+            $userInfo = array (
+                'email' => $user->getEmail(),
+                'date_inscription' => $user->getDateInscription(),
+                'role' => $userRole->getName()
+            );
+
+            echo json_encode($userInfo);
         }
     }
     
@@ -136,6 +147,16 @@ class UserController extends BaseController
 
         $jwt = JWT::encode($payload, $key, 'HS256');
         return $jwt;
+    }
+
+    public function executeRefreshToken(){
+        $jwt = $this->HTTPRequest->getJWTDetailled();
+        $email = $jwt->email;
+        $newJWT = $this->generateJWT($email);
+        echo json_encode(array (
+            "message" => "Your token has been successfully refreshed",
+            "JWT" => $newJWT
+        ));
     }
 
 }

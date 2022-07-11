@@ -2,14 +2,14 @@ import { Card } from "components/atoms/grouping";
 import { PageTemplate } from "components/templates";
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
-import { ambiancesList } from "../Ambiances/DataAmbiances";
-import { songsdata } from "../Ambiances/Player/audio";
-import Player from "../Ambiances/Player/Player";
-import "./Ambiance-style.css";
+import "./AmbianceSinglePage.css";
+import { songsdata } from "components/atoms/embedding/Player/audio";
+import Player from "components/atoms/embedding/Player/Player";
+import { ambiancesList } from "components/pages/AmbiancesPage/ambiancesData";
 
 const AmbianceSinglePage = () => {
   let { ambianceId } = useParams();
-  const [element, setElement] = useState([...ambiancesList]);
+  const [element] = useState([...ambiancesList]);
   const [songs, setSongs] = useState(songsdata);
   const [isplaying, setisplaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(songsdata[ambianceId - 1]);
