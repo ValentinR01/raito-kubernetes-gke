@@ -52,7 +52,6 @@ class HTTPRequest
 
     public function isTokenValid(string $jwt): bool
     {
-        $jwt = substr($jwt, 7);
        
         try {
             // Decode and Analyse
@@ -79,9 +78,7 @@ class HTTPRequest
 
 
     public function isUserAllowed() {
-        $jwt = $_SERVER['HTTP_AUTHORIZATION'];
-        $isMyTokenValid = $this->isTokenValid($jwt);
-        
+        $jwt = $_COOKIE['Token'] ?? null;
         
         if (!isset($jwt) or $jwt == '') {
             http_response_code(401);
@@ -90,10 +87,11 @@ class HTTPRequest
             ));
             return false;
         }
-        else if (!$isMyTokenValid){
+        else if (!$this->isTokenValid($jwt)){
             http_response_code(401);
             echo json_encode(array(
-                'message' => 'Your token is not valid'
+                'message' => 'Your token is not valid',
+                'jwt' => $jwt
             ));
             return false;
         }
@@ -103,8 +101,7 @@ class HTTPRequest
     public function getJWTDetailled(){
         
         if ($this->isUserAllowed()) {
-            $jwt = $_SERVER['HTTP_AUTHORIZATION'];
-            $jwt = substr($jwt, 7);
+            $jwt = $_COOKIE['Token'];
             $jwtDetailled = JWT::decode($jwt, new Key($this->key, 'HS256'));
             return $jwtDetailled; 
         }
