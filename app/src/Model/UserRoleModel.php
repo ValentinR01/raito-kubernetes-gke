@@ -3,7 +3,6 @@
 namespace App\Model;
 
 use App\Factory\PDOFactory;
-use App\Entity\UserRole;
 use PDO;
 
 
