@@ -7,7 +7,7 @@ import React from "react";
 const HomePage = () => {
   return (
     <PageTemplate>
-      <Card large>
+      <Card>
         <Heading size="xlarge" color="primary">
           RAITŌ ライト
         </Heading>
