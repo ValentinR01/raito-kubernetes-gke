@@ -8,7 +8,7 @@
 • [Mélissande Dizy](https://github.com/lestox)       
 • [Nassim Yazi](https://github.com/Nassim-dev)       
 • [Nicolas Foessel](https://github.com/NicolasFOESSEL)        
-• [Valentin Rajeunier](https://github.com/ValentinR01)           
+• [Valentin Rejaunier](https://github.com/ValentinR01)           
 
 ### FRONT :       
 • [Doriane Farau](https://github.com/DFarau)         
