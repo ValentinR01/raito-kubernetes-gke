@@ -15,4 +15,7 @@
     <route path="exercice" action="ExerciceList" controller="ExerciceController"/>
     <route path="ambiance" action="Ambiance" controller="AmbianceController"/>
     <route path="ambiance" action="Ambiance" controller="AmbianceController" params="id"/>
+
+    <!-- Healthcheck -->
+    <route path="healthz" action="HealthCheck" controller="HealthController"/>
 </routes>
