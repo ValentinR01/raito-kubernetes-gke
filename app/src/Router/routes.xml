@@ -2,7 +2,9 @@
 
 <routes>
     <route path="/" action="Index" controller="CategoryController"/>
-    <route path="test" action="Test" controller="CategoryController"/>
+
+    <!-- Healthcheck -->
+    <route path="healthz" action="HealthCheck" controller="HealthController"/>
 
     <!-- User Management -->
     <route path="register" action="AddUser" controller="UserController"/>
@@ -15,7 +17,4 @@
     <route path="exercice" action="ExerciceList" controller="ExerciceController"/>
     <route path="ambiance" action="Ambiance" controller="AmbianceController"/>
     <route path="ambiance" action="Ambiance" controller="AmbianceController" params="id"/>
-
-    <!-- Healthcheck -->
-    <route path="healthz" action="HealthCheck" controller="HealthController"/>
 </routes>

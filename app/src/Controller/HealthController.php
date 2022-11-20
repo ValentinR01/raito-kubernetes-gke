@@ -12,11 +12,13 @@ class HealthController extends BaseController
     {
         if ($this->HTTPRequest->isMethodAllowed('GET'))
         {
+            // Check if database is up
             try {
                 $categoryModel = new CategoryModel(new PDOFactory());
                 $category = $categoryModel->getAllCategory();
                 return $this->renderJSON(['healthCheck' => 'OK']);
-            }  catch (\Exception $e) {
+            }  
+            catch (\Exception $e) {
                 http_response_code(500);
                 return $this->renderJSON(['healthCheck' => 'KO']);
             }
