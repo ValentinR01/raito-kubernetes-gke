@@ -8,4 +8,4 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql \
     && a2enmod rewrite
 RUN apt-get update -y
 
-EXPOSE 80
+EXPOSE 8080
