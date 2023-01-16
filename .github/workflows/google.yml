@@ -41,7 +41,8 @@ jobs:
     - name: Build Docker image
       run: 
         docker build -f front.dockerfile . --tag front-container:$(date +%s) &&
-        docker build -f backend.dockerfile . --tag backend-container:$(date +%s)
+        docker build -f backend.dockerfile . --tag backend-container:$(date +%s) &&
+        docker ps -a
         
     # Push the Docker image to Google Artifact Registry
     - name: Publish
