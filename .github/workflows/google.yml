@@ -46,9 +46,10 @@ jobs:
         
     # Push the Docker image to Google Artifact Registry
     - name: Publish
-      run: |-
-        docker tag front-container:latest europe-west1-docker.pkg.dev/raito-369114/raito-docker-repo/front-container:latest &&
-        docker push europe-west1-docker.pkg.dev/raito-369114/raito-docker-repo/front-container:latest
+      run: 
+        docker image ls &&
+        docker tag backend-container:latest europe-west1-docker.pkg.dev/raito-369114/raito-docker-repo/backend-container:latest &&
+        docker push europe-west1-docker.pkg.dev/raito-369114/raito-docker-repo/backend-container:latest
         
         
         
