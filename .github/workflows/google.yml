@@ -48,7 +48,7 @@ jobs:
     - name: Publish
       run: 
         docker image ls &&
-        docker push backend-container:1 
+        docker push europe-west1-docker.pkg.dev/raito-369114/raito-docker-repo/backend-container
         
         
         
