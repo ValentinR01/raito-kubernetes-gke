@@ -1,0 +1,21 @@
+name: Build Docker Images
+
+on:
+  pull_request:
+    branches: 
+      - "develop" 
+      - "master"
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: 
+        docker build -f front.dockerfile . --tag front-container:$(date +%s) &&
+        docker build -f backend.dockerfile . --tag backend-container:$(date +%s)
+        
+ 
