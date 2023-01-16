@@ -47,7 +47,7 @@ jobs:
     - name: Publish
       run: |-
         echo $GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA &&
-        docker push "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA"
+        docker push europe-west1-docker.pkg.dev/raito-369114/raito-docker-repo/front-container
         
         
         
