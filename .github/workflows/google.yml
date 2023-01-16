@@ -40,15 +40,15 @@ jobs:
 
     - name: Build Docker image
       run: 
-        docker build -f front.dockerfile . --tag front-container:$(date +%s) &&
-        docker build -f backend.dockerfile . --tag backend-container:$(date +%s) &&
+        docker build -f front.dockerfile . --tag front-container:1 &&
+        docker build -f backend.dockerfile . --tag backend-container:1 &&
         docker image ls
         
     # Push the Docker image to Google Artifact Registry
     - name: Publish
       run: |-
         echo $GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA &&
-        docker push europe-west1-docker.pkg.dev/raito-369114/raito-docker-repo/front-container
+        docker push europe-west1-docker.pkg.dev/raito-369114/raito-docker-repo/front-container:1
         
         
         
